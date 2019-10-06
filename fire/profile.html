@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Home Page</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <a class="navbar-brand" href="#">OCFR</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Content1<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Content2</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Content3</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+  <br>
+  <div class="container">
+      <div class="row">
+        <div id="mainContent" class="col-md">
+
+
+          <div class="form-group row">
+            <label for="inputFirstName" class="form-group col-md-6">First Name</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="inputFirstName" placeholder="First Name" v-model="#">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="inputLastName" class="form-group col-md-6">Last Name</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="inputLastName" placeholder="Last Name" v-model="#">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="inputGender" class="form-group col-md-6">Gender</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="inputGender" placeholder="Male/Female" v-model="#">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="inputAddress" class="col-md-6">Address</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="inputAddress" placeholder="Street, City, State, Zip" v-model="#">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="inputWorkphone" class="col-md-6">Work phone number</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="inputWorkphone" placeholder="Eg. (000)-000-0000" v-model="#">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="inputMobilephone" class="col-md-6">Mobile phone number</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="inputMobilephone" placeholder="Eg. (000)-000-0000" v-model="#">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="inputRadioNum" class="col-md-6">Radio number</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="inputRadioNum" placeholder="Eg. 000" v-model="#">
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+
+
+</body>
+</html>
