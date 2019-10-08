@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>OCFR</title>
+<title>OCFR-Member</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="css/layout.css" type="text/css">
+    
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
@@ -16,9 +17,10 @@
 
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-</head>
+    </head>   
 <body>
-<div class="wrapper row1">
+
+  <div class="wrapper row1">
   <header id="header" class="clear">
    
       <div id="hgroup">
@@ -39,29 +41,35 @@
 <div class="wrapper row2">
   <div id="container" class="clear">
 
-    <img src="images/960x360.jpg" alt="" width="940px">
-    </div>
+        <table class="table table-sm table-hover">
+            <thead>
+              <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Station Number</th>
+                <th>Radio Number</th>
+                <th>Email</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="F in Flighters" @click="handleRowClick(p)">
+                <td>{{ F.FirstName }}</td>
+                <td>{{ F.LastName }}</td>
+                <td>{{ F.Station }}</td>
+                <td>{{ F.Radio }}</td>
+                <td>{{ F.Email }}</td>
+              </tr>
+            </tbody>
+          </table>
 
-    
-    </div>
-<div class="wrapper row2">
-    <div id="container" class="clear">
-        
-        <center><h2>About This Website</h2></center>
-        
-        <p>
-        Oconee County Fire Rescue (OCFR) is a mostly volunteer organization in Oconee County, GA. Each Registered Fire Fighters have to maintain several certifications, many of which expire. This website is used to track the fighter's information and certification status. 
-        
-        </p>
 
-  </div>
-
+        </div>
+      </div>
 <div class="wrapper row3">
   <footer id="footer" class="clear">
       <center>All Rights Reserved - Team 22 MSIS Core</center>
   
   </footer>
-</div>
     </div>
 </body>
 </html>
