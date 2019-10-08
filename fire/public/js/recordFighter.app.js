@@ -6,12 +6,12 @@ var FighterRecordApp = new Vue({
   },
   methods: {
     fetchFighters() {
-      fetch('api/records/')
+      fetch('dummy_data_fighters.php')
       .then(response => response.json())
       .then(json => { FighterRecordApp.Fighters = json(); })
     },
     handleSubmit(event) {
-      fetch('api/records/post.php', {
+      fetch('api/Fighter/post.php', {
         method: 'POST',
         body: JSON.stringify(this.recordFighter),
         headers: {
