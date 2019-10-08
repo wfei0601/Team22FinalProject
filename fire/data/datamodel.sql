@@ -13,14 +13,10 @@ CREATE TABLE Fighters (
     StartDate date default GetDate(),
     Position varchar(20),
     RadioNum varchar(20),
-    StationNum integer);
+    StationNum integer),
+    MobilePhone varchar(10),
+    WorkPhone varchar(10));
     
-Create Table Phone (
-    PhoneId integer autoincrement primary key
-    MemberId integer,
-    PhoneNum VARCHAR(10),
-    FOREIGN KEY (MemberId) REFERENCES Fighters(MemberId)
-);
 
 Create table Certifications (
     CertificationId varchar(20) primary key,
