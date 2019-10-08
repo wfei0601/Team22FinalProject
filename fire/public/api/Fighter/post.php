@@ -9,8 +9,9 @@ $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
 $stmt = $db->prepare(
-  'INSERT INTO Patient
-    (patientGuid, firstName, lastName, dob, sexAtBirth)
+  'INSERT INTO Fighter
+    (MemberId, FirstName, LastName, DateOfBirth, Gender, Email, Street, City,
+    State, ZipCode, StartDate, Position, RadioNum, StationNum)
   VALUES (?, ?, ?, ?, ?)'
 );
 
