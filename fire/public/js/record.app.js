@@ -1,5 +1,5 @@
-var patientRecordApp = new Vue({
-  el: '#patientRecordApp',
+var fighterRecordApp = new Vue({
+  el: '#fighterRecordApp',
   data: {
     fighters: []
   },
@@ -7,7 +7,7 @@ var patientRecordApp = new Vue({
     fetchFighters() {
       fetch('dummy_data_fighters.php')
       .then(response => response.json())
-      .then(json => { patientRecordApp.fighters = json })
+      .then(json => { fighterRecordApp.fighters = json })
     }
   },
   created() {
