@@ -30,14 +30,14 @@ var FighterRecordApp = new Vue({
       this.recordFighter = {
         FirstName: '',
         LastName: '',
-         Gender:'',
-          Street:'',
-          City:'',
-          State:'',
-          Zip:'',
+        Gender:'',
+        Street:'',
+        City:'',
+        State:'',
+        Zip:'',
         Station: '',
         Radio: '',
-        Email: '' 
+        Email: ''
       }
     },
     handleRowClick(Fighter) {

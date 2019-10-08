@@ -12,11 +12,15 @@ $stmt = $db->prepare(
   'INSERT INTO Fighter
     (MemberId, FirstName, LastName, DateOfBirth, Gender, Email, Street, City,
     State, ZipCode, StartDate, Position, RadioNum, StationNum)
-  VALUES (?, ?, ?, ?, ?)'
+  VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'
 );
 
 $stmt->execute([
   $guid,
+  $_POST['firstName'],
+  $_POST['lastName'],
+  $_POST['dob'],
+  $_POST['sexAtBirth']
   $_POST['firstName'],
   $_POST['lastName'],
   $_POST['dob'],
