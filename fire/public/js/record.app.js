@@ -5,7 +5,7 @@ var fighterRecordApp = new Vue({
   },
   methods: {
     fetchFighters() {
-      fetch('dummy_data_fighters.php')
+      fetch('fire/dummy_data_fighters.php')
       .then(response => response.json())
       .then(json => { fighterRecordApp.fighters = json })
     }
