@@ -29,7 +29,19 @@
 
   <div class="container">
     <div class="row">
-      <!-- <div id="mainContent" class="col"> -->
+        
+        
+        
+         <div id="FighterRecordApp" class="col-md-12 queueView">
+        <div class="Fighters FightersApp"
+        v-for="Fighter in Fighters">
+          {{ displayUtcAsLocal(patient.visitDateUtc) }}<br>
+          <span class="patientName">{{ patient.lastName }}</span>,
+          <span class="patientName">{{ patient.firstName }}</span><br>
+          {{ patient.sexAtBirth }} {{ patient.dob }}
+        </div>
+      </div>
+        
         <div id="fighterRecordApp" v-for="F in fighters">
           <table class="table table-sm table-hover">
             <thead>
@@ -54,8 +66,7 @@
         </div>
       </div>
     </div>
-  </div>
-</body>
+ 
 <div class="wrapper row3">
   <footer id="footer" class="clear">
       <center>All Rights Reserved - Team 22 MSIS Core</center>
