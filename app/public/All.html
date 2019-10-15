@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>OCFR-Member</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/layout.css" type="text/css">
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="wrapper row1">
+    <header id="header" class="clear">
+      <div id="hgroup">
+          <h1>Oconee County Fire Rescue</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="profile.html">Add New Member</a></li>
+          <li><a href="Expire.html">Display Expired Certifications</a></li>
+          <li><a href="All.html">Display All Members</a></li>
+        </ul>
+      </nav>
+    </header>
+  </div>
+    <main>
+      <div class="container">
+        <div class="row">
+          <div id="fighterRecordApp" class="col-md-12 queueView">
+            <div class="fighter fighterRecordApp"
+            v-for="f in fighters">
+              <br>
+              <span >{{ f.LastName }}</span>,
+              <span >{{ f.FirstName }}</span><br>
+              {{ f.Gender }} {{ f.DateOfBirth }}
+            </div>
+              <table class="table table-sm table-hover">
+                <thead>
+                  <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Station Number</th>
+                    <th>Radio Number</th>
+                    <th>Email</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>{{ f.FirstName }}</td>
+                    <td>{{ f.LastName }}</td>
+                    <td>{{ f.Station }}</td>
+                    <td>{{ f.Radio }}</td>
+                    <td>{{ f.Email }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </main>
+<div class="wrapper row3">
+  <footer id="footer" class="clear">
+      <center>All Rights Reserved - Team 22 MSIS Core</center>
+  </footer>
+</div>
+    <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <!-- Popper JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="js/record.app.js"></script>
+
+</body>
+</html>

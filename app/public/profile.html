@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>OCFR-Member</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/layout.css" type="text/css">
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    </head>
+<body>
+
+  <div class="wrapper row1">
+  <header id="header" class="clear">
+
+      <div id="hgroup">
+          <h1>Oconee County Fire Rescue</h1>
+    </div>
+
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="profile.html">Add New Member</a></li>
+        <li><a href="Expire.html">Display Expired Certifications</a></li>
+        <li><a href="All.html">Display All Members</a></li>
+      </ul>
+    </nav>
+  </header>
+</div>
+
+<div id="FighterRecordApp">
+  <form>
+<div class="wrapper row2">
+  <div id="container" class="clear">
+
+          <div class="form-group row">
+            <label for="inputFirstName" class="form-group col-md-6">First Name</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="inputFirstName" placeholder="First Name" v-model="#">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="inputLastName" class="form-group col-md-6">Last Name</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="inputLastName" placeholder="Last Name" v-model="#">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="inputGender" class="form-group col-md-6">Gender</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="inputGender" placeholder="Male/Female" v-model="#">
+            </div>
+          </div>
+
+
+      <div class="form-group row">
+            <label for="inputStreet" class="col-md-6">Street Address</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="inputStreet" placeholder="Street" v-model="#">
+            </div>
+          </div>
+
+
+      <div class="form-group row">
+            <label for="inputCity" class="col-md-6">City</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="inputCity" placeholder="City" v-model="#">
+            </div>
+          </div>
+
+
+      <div class="form-group row">
+            <label for="inputState" class="col-md-6">State</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="inputState" placeholder="State" v-model="#">
+            </div>
+          </div>
+
+      <div class="form-group row">
+            <label for="inputZip" class="col-md-6">Zip Code</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="inputZip" placeholder="Zip" v-model="#">
+            </div>
+          </div>
+
+
+
+          <div class="form-group row">
+            <label for="inputWorkphone" class="col-md-6">Work phone number</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="inputWorkphone" placeholder="Eg. (000)-000-0000" v-model="#">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="inputMobilephone" class="col-md-6">Mobile phone number</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="inputMobilephone" placeholder="Eg. (000)-000-0000" v-model="#">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="inputRadioNum" class="col-md-6">Radio number</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="inputRadioNum" placeholder="Eg. 000" v-model="#">
+            </div>
+          </div>
+        <div class="form-group row">
+            <label for="inputStationNum" class="col-md-6">Station number</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="inputStationNum" placeholder="Eg. 000" v-model="#">
+            </div>
+          </div>
+    <div class="form-group row">
+            <label for="inputEmail" class="col-md-6">Email Address</label>
+            <div class="col-sm-10">
+              <input type="email" class="form-control" id="inputEmail" placeholder="Email" v-model="#">
+            </div>
+          </div>
+          <form  v-on:submit.prevent="handleSubmit">
+            <input type="submit">
+
+          </form>
+        </div>
+      </div>
+    </form>
+</div>
+<div class="wrapper row3">
+  <footer id="footer" class="clear">
+      <center>All Rights Reserved - Team 22 MSIS Core</center>
+
+  </footer>
+    </div>
+    <script>src="js/recordFigter.app.js"</script>
+</body>
+</html>
