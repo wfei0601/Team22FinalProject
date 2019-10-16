@@ -1,15 +1,15 @@
-var FighterRecordApp = new Vue({
-  el: '#FightersApp',
+var fighterRecordApp = new Vue({
+  el: '#fighterRecordApp',
   data: {
-    Fighters: [],
+    fighters: [],
     recordFighter: {}
   },
   methods: {
     fetchFighters() {
       // fetch('api/records/')
-      fetch('data/dummy_data_fighters.php')
+      fetch('api/Fighter/index.php')
       .then(response => response.json())
-      .then(json => { FighterRecordApp.Fighters = json })
+      .then(json => { fighterRecordApp.fighters = json })
     },
     handleSubmit(event) {
       fetch('api/Fighter/post.php', {
@@ -20,7 +20,7 @@ var FighterRecordApp = new Vue({
         }
       })
       .then( response => response.json() )
-      .then( json => {FighterRecordApp.Fighters.push( json[0] )})
+      .then( json => {fighterRecordApp.fighters.push( json[0] )})
       .catch( err => {
         console.error('RECORD POST ERROR:');
         console.error(err);
@@ -36,13 +36,13 @@ var FighterRecordApp = new Vue({
         City:'',
         State:'',
         Zip:'',
-        Station: '',
-        Radio: '',
+        StationNumber: '',
+        RadioNumber: '',
         Email: ''
       }
     },
-    handleRowClick(Fighter) {
-      FighterRecordApp.patient = Fighter;
+    handleRowClick(fighter) {
+      fighterRecordApp.fighter = fighter;
     }
   }, // end methods
   created() {

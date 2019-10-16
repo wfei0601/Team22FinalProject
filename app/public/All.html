@@ -30,13 +30,6 @@
       <div class="container">
         <div class="row">
           <div id="fighterRecordApp" class="col-md-12 queueView">
-            <div class="fighter fighterRecordApp"
-            v-for="f in fighters">
-              <br>
-              <span >{{ f.LastName }}</span>,
-              <span >{{ f.FirstName }}</span><br>
-              {{ f.Gender }} {{ f.DateOfBirth }}
-            </div>
               <table class="table table-sm table-hover">
                 <thead>
                   <tr>
@@ -48,11 +41,11 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
+                  <tr v-for="f in fighters">
                     <td>{{ f.FirstName }}</td>
                     <td>{{ f.LastName }}</td>
-                    <td>{{ f.Station }}</td>
-                    <td>{{ f.Radio }}</td>
+                    <td>{{ f.StationNumber }}</td>
+                    <td>{{ f.RadioNumber }}</td>
                     <td>{{ f.Email }}</td>
                   </tr>
                 </tbody>
@@ -75,7 +68,7 @@
   <!-- Latest compiled JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-  <script src="js/record.app.js"></script>
+  <script src="js/recordFighter.app.js"></script>
 
 </body>
 </html>

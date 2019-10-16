@@ -4,21 +4,21 @@
 $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
-if (isset($_GET['guid'])) {
+if (isset($_GET['MemberId'])) {
   $stmt = $db->prepare(
-    'SELECT * FROM Patient
-    WHERE patientGuid = ?'
+    'SELECT * FROM Fighters
+    WHERE MemberId = ?'
   );
-  $stmt->execute([$_GET['guid']]);
+  $stmt->execute([$_GET['MemberId']]);
 } else {
-  $stmt = $db->prepare('SELECT * FROM Patient');
+  $stmt = $db->prepare('SELECT * FROM Fighters');
   $stmt->execute();
 }
 
-$patients = $stmt->fetchAll();
+$fighters = $stmt->fetchAll();
 
 // Step 3: Convert to JSON
-$json = json_encode($patients, JSON_PRETTY_PRINT);
+$json = json_encode($fighters, JSON_PRETTY_PRINT);
 
 // Step 4: Output
 header('Content-Type: application/json');

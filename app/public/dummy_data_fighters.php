@@ -35,7 +35,7 @@
   },
   {
     "MemberID": "00000003",
-    "DateOfBirth": "1987-11-9,"
+    "DateOfBirth": "1987-11-9",
     "Email": "firesucks@oconeefire.com",
     "Gender": "F",
     "StartDate": "2010-1-27",

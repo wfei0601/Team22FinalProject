@@ -11,7 +11,7 @@
 </head>
 <body>
   <div id="fighterRecordApp">
-    <div v-for="f in fighters">
+    <div>
       <table>
         <thead>
           <tr>
@@ -23,11 +23,11 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <tr v-for="f in fighters">
             <td>{{ f.FirstName }}</td>
             <td>{{ f.LastName }}</td>
-            <td>{{ f.Station }}</td>
-            <td>{{ f.Radio }}</td>
+            <td>{{ f.StationNumber }}</td>
+            <td>{{ f.RadioNumber }}</td>
             <td>{{ f.Email }}</td>
           </tr>
         </tbody>

@@ -18,8 +18,8 @@ class DbConnection
           error_log($dsn);
           self::$connection = new PDO(
              $dsn,
-             getenv('nullproblem'),
-             getenv('nullproblem'),
+             getenv('MYSQL_USER'),
+             getenv('MYSQL_PASSWORD'),
              [
                  PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
                  PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
