@@ -1,9 +1,12 @@
 FROM php:7.3.8-apache
 <<<<<<< HEAD
+<<<<<<< HEAD
 # We could use `httpd:2.4`, as we don't need PHP right now, but the config files
 # in that image are in a different place. This is easier in the long run.
 =======
 >>>>>>> Ethan
+=======
+>>>>>>> 70bbd825d4fe2cc8843b635444628804af74f52f
 
 LABEL maintainer="Team 22"
 
