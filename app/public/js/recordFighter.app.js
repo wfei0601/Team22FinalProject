@@ -1,4 +1,4 @@
-var FighterRecordApp = new Vue({
+var fighterApp = new Vue({
   el: '#FightersApp',
   data: {
     Fighters: [],

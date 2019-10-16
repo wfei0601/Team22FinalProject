@@ -14,12 +14,12 @@ class DbConnection
       }
 
       try {
-          $dsn = 'mysql:host='.$_ENV['team-22.cg3s3y5635gv.us-east-1.rds.amazonaws.com'].';dbname='.$_ENV['team-22'].';charset=utf8';
+          $dsn = 'mysql:host='.getenv('MYSQL_HOST').';dbname='.getenv('MYSQL_DATABASE').';charset=utf8';
           error_log($dsn);
           self::$connection = new PDO(
              $dsn,
-             $_ENV['nullproblem'],
-             $_ENV['nullproblem'],
+             getenv('MYSQL_USER'),
+             getenv('MYSQL_PASSWORD'),
              [
                  PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
                  PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
