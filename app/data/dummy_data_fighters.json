@@ -14,7 +14,7 @@
     "FirstName":"Albert",
     "LastName":"Dickens",
     "StationNumber":"3",
-    "IsActive":"Y",
+    "IsActive":"Y"
   },
   {
     "MemberID":"00000002",
@@ -31,7 +31,7 @@
     "FirstName":"Brock",
     "LastName":"Johnson",
     "StationNumber":"1",
-    "IsActive":"Y",
+    "IsActive":"Y"
   },
   {
     "MemberID":"00000003",
@@ -48,6 +48,6 @@
     "FirstName":"Elle",
     "LastName":"Louis",
     "StationNumber":"8",
-    "IsActive":"Y",
-  },
+    "IsActive":"Y"
+  }
 ]
