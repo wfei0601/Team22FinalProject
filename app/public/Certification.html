@@ -31,8 +31,10 @@
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="profile.html">Add New Member</a></li>
+        <li><a href="Certification.html">Add New Certification</li>
         <li><a href="Expire.html">Display Expired Certifications</a></li>
         <li><a href="All.html">Display All Members</a></li>
+
       </ul>
     </nav>
   </header>
@@ -71,7 +73,7 @@
             <input type="text" class="form-control" id="inputValidTime" placeholder="ValidTime" v-model="recordCertification.ValidTime">
           </div>
         </div>
-       
+
 
         <form  v-on:submit.prevent="handleSubmit">
           <input type="submit">
