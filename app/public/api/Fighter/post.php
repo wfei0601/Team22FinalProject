@@ -8,9 +8,9 @@ $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
 $stmt = $db->prepare(
-  'INSERT INTO Fighters ( FirstName, LastName, Gender,
-    Street, City, State, ZipCode, WorkNum, MobileNum, RadioNum,
-    StationNum, Email, DateOfBirth)
+  'INSERT INTO Fighters ( FirstName, LastName, DateOfBirth, Gender, Email,
+    MobileNum, WorkNum, Street, City, State, ZipCode,
+    RadioNum, StationNum)
   VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'
 );
 
@@ -19,15 +19,15 @@ $stmt->execute([
   $_POST['LastName'],
   $_POST['DateOfBirth'],
   $_POST['Gender'],
+  $_POST['Email'],
+  $_POST['MobileNum'],
+  $_POST['WorkNum'],
   $_POST['Street'],
   $_POST['City'],
   $_POST['State'],
   $_POST['ZipCode'],
-  $_POST['WorkNum'],
-  $_POST['MobileNum'],
   $_POST['RadioNum'],
-  $_POST['StationNum'],
-  $_POST['Email']
+  $_POST['StationNum']
 ]);
 
 $MemberId = $db->lastInsertId();
