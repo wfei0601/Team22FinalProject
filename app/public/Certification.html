@@ -32,55 +32,47 @@
 </div>
 
 div class="container">
-<div id="EnrollmentRecordApp">
+<div>
   <form>
     <div class="wrapper row2">
       <div id="container" class="clear">
 
 
 
-          <div class="row">
-            <div id="fighterRecordApp" class="col-md-6 queueView">
-                <table class="table table-sm table-hover">
-                  <thead>
-                    <tr>
-                      <th>Member Id</th>
-                      <th>Name</th>
-
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr v-for="f in fighters">
-                      <td>{{ f.MemberId }}</td>
-                      <td>{{ f.FirstName }}.{{ f.LastName }}</td>
-
-                    </tr>
-                  </tbody>
-                </table>
+        <div id="fighterRecordApp">
+          <form>
+            <div v-for="f in fighters">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" v-model="fighters.MemberId" value="fighters.MemberId" checked>
+                <label class="form-check-label">
+                  {{ f.FirstName }} {{ f.LastName }} {{ f.MemberId }}
+                </label>
               </div>
             </div>
+          </form>
+        </div>
 
 
-            <div class="row">
-              <div id="certificationRecordApp" class="col-md-6 queueView">
-                  <table class="table table-sm table-hover">
-                    <thead>
-                      <tr>
-                        <th>Certification Id</th>
-                        <th>Certification Name</th>
+        <div class="row">
+          <div id="certificationRecordApp" class="col-md-6 queueView">
+              <table class="table table-sm table-hover">
+                <thead>
+                  <tr>
+                    <th>Certification Id</th>
+                    <th>Certification Name</th>
 
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr v-for="c in Certifications">
-                        <td>{{ c.CertificationId }}</td>
-                        <td>{{ c.Name }}</td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr v-for="c in Certifications">
+                    <td>{{ c.CertificationId }}</td>
+                    <td>{{ c.Name }}</td>
 
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
 
 
 
@@ -121,7 +113,8 @@ div class="container">
 
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
-    <script>src="js/recordCertification.app.js"</script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="js/recordCertification.app.js"></script>
+    <script src="js/recordFighter.app.js"></script>
 </body>
 </html>
