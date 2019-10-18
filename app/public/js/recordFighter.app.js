@@ -12,6 +12,7 @@ var fighterRecordApp = new Vue({
       .then(json => { fighterRecordApp.fighters = json })
     },
     handleSubmit(event) {
+// console.log('Foo');
       fetch('api/Fighter/post.php', {
         method: 'POST',
         body: JSON.stringify(this.recordFighter),
@@ -19,8 +20,9 @@ var fighterRecordApp = new Vue({
           "Content-Type": "application/json; charset=utf-8"
         }
       })
-      .then( response => response.json() )
-      .then( json => {fighterRecordApp.fighters.push( json[0] )})
+      .then( response => window.location.href='All.html')
+      // .then( response => response.json() )
+      // .then( json => {fighterRecordApp.fighters.push( json[0] )})
       .catch( err => {
         console.error('RECORD POST ERROR:');
         console.error(err);
