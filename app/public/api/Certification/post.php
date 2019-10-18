@@ -9,29 +9,17 @@ $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
 $stmt = $db->prepare(
-  'INSERT INTO Fighters (MemberId, FirstName, LastName, Gender,
-    Street, City, State, ZipCode, WorkNum, MobileNum, RadioNum,
-    StationNum, Email, DateOfBirth)
-  VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'
-);
+  'INSERT INTO Certifications (CertificationId, Name, Description, ValidTime)
+  VALUES (?, ?, ?, ?);
 
 $stmt->execute([
-  $MemberId,
-  $_POST['FirstName'],
-  $_POST['LastName'],
-  $_POST['DateOfBirth'],
-  $_POST['Gender']
-  $_POST['Street'],
-  $_POST['City'],
-  $_POST['State'],
-  $_POST['ZipCode']
-  $_POST['WorkNum'],
-  $_POST['MobileNum'],
-  $_POST['RadioNum'],
-  $_POST['StationNum']
-  $_POST['Email']
+  $CertificationId,
+  $_POST['Name'],
+  $_POST['Description'],
+  $_POST['ValidTime'],
+
 ]);
 
 // Step 4: Output
 header('HTTP/1.1 303 See Other');
-header('Location: ../records/?MemberId=' . $MemberId);
+header('Location: ../records/?CertificationId=' . $CertificationId);

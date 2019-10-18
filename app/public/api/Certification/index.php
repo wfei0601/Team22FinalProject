@@ -4,14 +4,14 @@
 $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
-if (isset($_GET['MemberId'])) {
+if (isset($_GET['CertificationId'])) {
   $stmt = $db->prepare(
-    'SELECT * FROM Fighters
-    WHERE MemberId = ?'
+    'SELECT * FROM Certifications
+    WHERE CertificationId = ?'
   );
-  $stmt->execute([$_GET['MemberId']]);
+  $stmt->execute([$_GET['CertificationId']]);
 } else {
-  $stmt = $db->prepare('SELECT * FROM Fighters');
+  $stmt = $db->prepare('SELECT * FROM Certifications');
   $stmt->execute();
 }
 
