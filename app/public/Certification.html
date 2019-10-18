@@ -31,54 +31,73 @@
   </header>
 </div>
 
-
+div class="container">
 <div id="EnrollmentRecordApp">
   <form>
     <div class="wrapper row2">
       <div id="container" class="clear">
 
 
+
+          <div class="row">
+            <div id="fighterRecordApp" class="col-md-6 queueView">
+                <table class="table table-sm table-hover">
+                  <thead>
+                    <tr>
+                      <th>Member Id</th>
+                      <th>Name</th>
+
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr v-for="f in fighters">
+                      <td>{{ f.MemberId }}</td>
+                      <td>{{ f.FirstName }}.{{ f.LastName }}</td>
+
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+
+            <div class="row">
+              <div id="certificationRecordApp" class="col-md-6 queueView">
+                  <table class="table table-sm table-hover">
+                    <thead>
+                      <tr>
+                        <th>Certification Id</th>
+                        <th>Certification Name</th>
+
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr v-for="c in Certifications">
+                        <td>{{ c.CertificationId }}</td>
+                        <td>{{ c.Name }}</td>
+
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+
+
         <div class="form-group row">
-          <label for="SelectName" class="form-group col-md-6">Select your Name</label>
+          <label for="inputStartDate" class="form-group col-md-6">Start Date</label>
           <div class="col-sm-10">
-
-            <input type="radio" name="Name" value="male" checked> Male<br>
- <input type="radio" name="gender" value="female"> Female<br>
- <input type="radio" class="form-control" idname="gender" value="other"> Other
-
-            <input type="text" class="form-control" id="inputCertificationId" placeholder="CertificationId" v-model="recordCertification.CertificationId">
+            <input type="date" class="form-control" id="inputStartDate" placeholder="StartDate" v-model="recordEnrollment.StartDate">
           </div>
         </div>
 
-
         <div class="form-group row">
-          <label for="inputCertificationId" class="form-group col-md-6">CertificationId</label>
+          <label for="inputExpireDate" class="form-group col-md-6">Expire Date</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control" id="inputCertificationId" placeholder="CertificationId" v-model="recordCertification.CertificationId">
+            <input type="date" class="form-control" id="inputExpireDate" placeholder="ExpireDate" v-model="recordEnrollment.ExpireDate">
           </div>
         </div>
 
-        <div class="form-group row">
-          <label for="inputName" class="form-group col-md-6">Certification Name</label>
-          <div class="col-sm-10">
-            <input type="text" class="form-control" id="inputName" placeholder="Name" v-model="recordCertification.Name">
-          </div>
-        </div>
-
-
-        <div class="form-group row">
-          <label for="inputDescription" class="form-group col-md-6">Certification Description</label>
-          <div class="col-sm-10">
-            <input type="text" class="form-control" id="inputDescription" placeholder="Description" v-model="recordCertification.Description">
-          </div>
-        </div>
-
-        <div class="form-group row">
-          <label for="inputValidTime" class="form-group col-md-6">Valid Time in Years</label>
-          <div class="col-sm-10">
-            <input type="text" class="form-control" id="inputValidTime" placeholder="ValidTime" v-model="recordCertification.ValidTime">
-          </div>
-        </div>
 
 
         <form  v-on:submit.prevent="handleSubmit">
