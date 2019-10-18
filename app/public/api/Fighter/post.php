@@ -20,18 +20,18 @@ $stmt->execute([
   $_POST['FirstName'],
   $_POST['LastName'],
   $_POST['DateOfBirth'],
-  $_POST['Gender']
+  $_POST['Gender'],
   $_POST['Street'],
   $_POST['City'],
   $_POST['State'],
-  $_POST['ZipCode']
+  $_POST['ZipCode'],
   $_POST['WorkNum'],
   $_POST['MobileNum'],
   $_POST['RadioNum'],
-  $_POST['StationNum']
+  $_POST['StationNum'],
   $_POST['Email']
 ]);
 
 // Step 4: Output
 header('HTTP/1.1 303 See Other');
-header('Location: ../records/?MemberId=' . $MemberId);
+header('Location: ../Fighter/?MemberId='.$MemberId);
