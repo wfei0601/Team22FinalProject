@@ -31,13 +31,16 @@ var fighterRecordApp = new Vue({
       this.recordFighter = {
         FirstName: '',
         LastName: '',
-        Gender:'',
-        Street:'',
-        City:'',
-        State:'',
-        Zip:'',
-        StationNumber: '',
-        RadioNumber: '',
+        Gender: '',
+        DateOfBirth: '',
+        Street: '',
+        City: '',
+        State: '',
+        ZipCode: '',
+        WorkNum: '',
+        MobileNum: '',
+        StationNum: '',
+        RadioNum: '',
         Email: ''
       }
     },
