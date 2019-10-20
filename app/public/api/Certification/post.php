@@ -10,7 +10,8 @@ $db = DbConnection::getConnection();
 // Step 2: Create & run the query
 $stmt = $db->prepare(
   'INSERT INTO Certifications (Name, Description, ValidTime)
-  VALUES (?, ?, ?);'
+  VALUES (?, ?, ?)'
+  );
 
 $stmt->execute([
   $_POST['Name'],

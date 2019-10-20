@@ -1,14 +1,14 @@
-var fighterRecordApp = new Vue({
-  el: '#fighterRecordApp',
+var enrollApp = new Vue({
+  el: '#enrollApp',
   data: {
-    recordFighter: {}
+    recordEnrollment: {}
   },
   methods: {
     handleSubmit(event) {
 // console.log('Foo');
-      fetch('api/Fighter/post.php', {
+      fetch('api/Enroll/post.php', {
         method: 'POST',
-        body: JSON.stringify(this.recordFighter),
+        body: JSON.stringify(this.recordEnrollment),
         headers: {
           "Content-Type": "application/json; charset=utf-8"
         }
@@ -23,20 +23,11 @@ var fighterRecordApp = new Vue({
       this.handleReset();
     },
     handleReset() {
-      this.recordFighter = {
-        FirstName: '',
-        LastName: '',
-        Gender: '',
-        DateOfBirth: '',
-        Street: '',
-        City: '',
-        State: '',
-        ZipCode: '',
-        WorkNum: '',
-        MobileNum: '',
-        StationNum: '',
-        RadioNum: '',
-        Email: ''
+      this.recordEnrollment = {
+        CertificationId: '',
+        MemberId: '',
+        StartDate: '',
+        ExpireDate: ''
       }
     }
   }, // end methods

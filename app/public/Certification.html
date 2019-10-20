@@ -1,111 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <title>OCFR-Member</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="css/layout.css" type="text/css">
-
-  <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-</head>
-<body>
-
-  <div class="wrapper row1">
-  <header id="header" class="clear">
-
-      <div id="hgroup">
+  <head>
+    <title>OCFR-Member</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/layout.css" type="text/css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="wrapper row1">
+      <header id="header" class="clear">
+        <div id="hgroup">
           <h1>Oconee County Fire Rescue</h1>
+        </div>
+
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="profile.html">Add New Member</a></li>
+            <li><a href="Certification.html">Add New Certification</li>
+            <li><a href="Expire.html">Display Expired Certifications</a></li>
+            <li><a href="All.html">Display All Members</a></li>
+          </ul>
+        </nav>
+      </header>
     </div>
+    <main>
+      <div class="container">
+      <div id="testApp">
+        <form v-on:submit.prevent="handleSubmit">
+          <div class="wrapper row2">
+            <div class="clear">
+              <!-- <div>
+                <form>
+                  <div v-for="f in fighters">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="fighterRadios" id="exampleRadios1" v-model="fighters.MemberId" value="fighters.MemberId" checked>
+                      <label class="form-check-label">
+                        {{ f.FirstName }} {{ f.LastName }} {{ f.MemberId }}
+                      </label>
+                    </div>
+                  </div>
+                </form>
+              </div> -->
+              <select class="custom-select" id="inputMemberId" v-model=recordEnrollment.MemberId>
+                <option v-for="f in fighters" value="fighters.MemberId">{{ f.FirstName }} {{ f.LastName }}</option>
+              </select>
 
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="profile.html">Add New Member</a></li>
-        <li><a href="Certification.html">Add New Certification</li>
-        <li><a href="Expire.html">Display Expired Certifications</a></li>
-        <li><a href="All.html">Display All Members</a></li>
-
-      </ul>
-    </nav>
-  </header>
-</div>
-
-div class="container">
-<div>
-  <form>
-    <div class="wrapper row2">
-      <div id="container" class="clear">
+              <select class="custom-select" id="inputCertificationId" v-model=recordEnrollment.CertificationId>
+                <option selected>Certification</option>
+                <option v-for="c in certs" value="certs.CertificationId">{{ c.Name }} {{ c.Description }}</option>
+              </select>
+              <!-- <div>
+                <form>
+                  <div v-for="c in certs">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="certRadios" id="exampleRadios2" v-model="certs.CertificationId" value="fighters.CertificationId" checked>
+                      <label class="form-check-label">
+                        {{ c.Name }} {{ c.CertificationId }}
+                      </label>
+                    </div>
+                  </div>
+                </form>
+              </div> -->
 
 
+              <!-- <div id="certApp" class="row">
+                <div class="col-md-6 queueView">
+                    <table class="table table-sm table-hover">
+                      <thead>
+                        <tr>
+                          <th>Certification Id</th>
+                          <th>Certification Name</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr v-for="c in certs">
+                          <td>{{ c.CertificationId }}</td>
+                          <td>{{ c.Name }}</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+       -->
 
-        <div id="fighterRecordApp">
-          <form>
-            <div v-for="f in fighters">
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" v-model="fighters.MemberId" value="fighters.MemberId" checked>
-                <label class="form-check-label">
-                  {{ f.FirstName }} {{ f.LastName }} {{ f.MemberId }}
-                </label>
+
+              <div class="form-group row">
+                <label for="inputStartDate" class="form-group col-md-6">Start Date</label>
+                <div class="col-sm-10">
+                  <input type="date" class="form-control" id="inputStartDate" placeholder="StartDate" v-model="recordEnrollment.StartDate">
+                </div>
               </div>
-            </div>
-          </form>
-        </div>
+
+              <div class="form-group row">
+                <label for="inputExpireDate" class="form-group col-md-6">Expire Date</label>
+                <div class="col-sm-10">
+                  <input type="date" class="form-control" id="inputExpireDate" placeholder="ExpireDate" v-model="recordEnrollment.ExpireDate">
+                </div>
+              </div>
 
 
-        <div class="row">
-          <div id="certificationRecordApp" class="col-md-6 queueView">
-              <table class="table table-sm table-hover">
-                <thead>
-                  <tr>
-                    <th>Certification Id</th>
-                    <th>Certification Name</th>
 
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr v-for="c in Certifications">
-                    <td>{{ c.CertificationId }}</td>
-                    <td>{{ c.Name }}</td>
-
-                  </tr>
-                </tbody>
-              </table>
+              <form>
+                <input type="submit">
+              </form>
             </div>
           </div>
-
-
-
-        <div class="form-group row">
-          <label for="inputStartDate" class="form-group col-md-6">Start Date</label>
-          <div class="col-sm-10">
-            <input type="date" class="form-control" id="inputStartDate" placeholder="StartDate" v-model="recordEnrollment.StartDate">
-          </div>
-        </div>
-
-        <div class="form-group row">
-          <label for="inputExpireDate" class="form-group col-md-6">Expire Date</label>
-          <div class="col-sm-10">
-            <input type="date" class="form-control" id="inputExpireDate" placeholder="ExpireDate" v-model="recordEnrollment.ExpireDate">
-          </div>
-        </div>
-
-
-
-        <form  v-on:submit.prevent="handleSubmit">
-          <input type="submit">
-    </form>
-  </div>
-</div>
-</form>
-</div>
-<div class="wrapper row3">
-  <footer id="footer" class="clear">
-      <center>All Rights Reserved - Team 22 MSIS Core</center>
-
-  </footer>
+        </form>
+      </div>
+      </div>
+    </main>
+    <div class="wrapper row3">
+      <footer id="footer" class="clear">
+          <center>All Rights Reserved - Team 22 MSIS Core</center>
+      </footer>
     </div>
-    <!-- jQuery library -->
+      <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <!-- Popper JS -->
@@ -114,7 +126,8 @@ div class="container">
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="js/recordCertification.app.js"></script>
-    <script src="js/recordFighter.app.js"></script>
-</body>
+    <!-- <script src="js/certification.app.js"></script>
+    <script src="js/fighter.app.js"></script> -->
+    <script src="js/test.app.js"></script>
+  </body>
 </html>

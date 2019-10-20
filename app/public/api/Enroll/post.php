@@ -8,14 +8,16 @@ $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
 $stmt = $db->prepare(
-  'INSERT INTO Enrollment (MemberId, CertificationId, EnrollDate)
-  VALUES (?, ?, ?)'
+  'INSERT INTO Enrollment (CertificationId, MemberId,
+    StartDate, ExpireDate)
+  VALUES (?, ?, ?, ?)'
 );
 
 $stmt->execute([
-  $_POST['MemberId'],
   $_POST['CertificationId'],
-  $_POST['EnrollDate']
+  $_POST['MemberId'],
+  $_POST['StartDate'],
+  $_POST['ExpireDate']
 ]);
 $EnrollmentId = $db->lastInsertId();
 

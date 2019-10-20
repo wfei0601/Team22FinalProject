@@ -1,26 +1,19 @@
-var certificationRecordApp = new Vue({
-  el: '#certificationRecordApp',
+var certRecordApp = new Vue({
+  el: '#certRecordApp',
   data: {
-    certifications: [],
-    recordCertification: {}
+    recordCert: {}
   },
   methods: {
-    fetchCertification() {
-      // fetch('api/records/')
-      fetch('api/Certification/index.php')
-      .then(response => response.json())
-      .then(json => { certificationRecordApp.certifications = json })
-    },
     handleSubmit(event) {
       fetch('api/Certification/post.php', {
         method: 'POST',
-        body: JSON.stringify(this.recordCertification),
+        body: JSON.stringify(this.recordCert),
         headers: {
           "Content-Type": "application/json; charset=utf-8"
         }
       })
       .then( response => response.json() )
-      .then( json => {certificationRecordApp.certifications.push( json[0] )})
+      .then( json => {certRecordApp.certs.push( json[0] )})
       .catch( err => {
         console.error('RECORD POST ERROR:');
         console.error(err);
@@ -28,20 +21,14 @@ var certificationRecordApp = new Vue({
       this.handleReset();
     },
     handleReset() {
-      this.recordCertification = {
+      this.recordCert = {
         Name: '',
         Description: '',
-        ValidTime: '',
-  
-    
+        ValidTime: ''
       }
-    },
-    handleRowClick(certification) {
-      fighterRecordApp.certification = certification;
     }
   }, // end methods
   created() {
     this.handleReset();
-    this.fetchCertifications();
   }
 });

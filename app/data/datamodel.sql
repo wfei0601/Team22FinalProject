@@ -1,6 +1,6 @@
 create database team22;
-CREATE TABLE Fighter (
-    MemberId integer autoincrement primary key,
+CREATE TABLE Fighters (
+    MemberId integer auto_increment primary key,
     FirstName VARCHAR(20),
     LastName VARCHAR(20),
     DateOfBirth date,
@@ -18,19 +18,19 @@ CREATE TABLE Fighter (
     WorkNum varchar(10)
 );
 
-Create table Certification (
-    CertId varchar(20) primary key,
+Create table Certifications (
+    CertificationId integer auto_increment primary key,
     Name varchar(10),
     Description varchar(50),
     ValidTime varchar(10)
-
 );
 
 create table Enrollment (
-    EnrollId integer autoincrement primary key,
-    EnrollDate date,
-    CertId varchar(20),
+    EnrollId integer auto_increment primary key,
+    CertificationId integer,
     MemberId integer,
-    foreign key (CertId) references Certification (CertId)
-    foreign key (MemberId) references Fighter (MemberId)
+	  StartDate date,
+    ExpireDate date,
+    foreign key (CertificationId) references Certifications (CertificationId),
+    foreign key (MemberId) references Fighters (MemberId)
 );
