@@ -68,31 +68,33 @@ p{text-align: center;margin: 5px;color: #232323;font-size: 20px;}
 
 
 .form-style{
-	max-width: 450px;
-	background: #FAFAFA;
-	padding: 30px;
+	max-width: 600px;
+	background: darkgray;
+	padding: 20px;
 	margin: 50px auto;
 	box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.35);
 	border-radius: 10px;
-	border: 6px solid #305A72;
+	border: 6px solid black;
+
 }
 .form-style ul{
-	padding:0;
+	padding:10;
 	margin:0;
 	list-style:none;
 }
 .form-style ul li{
 	display: block;
-	margin-bottom: 10px;
+	margin-bottom: 20px;
 	min-height: 35px;
+text-align: left;
 }
 .form-style ul li  .field-style{
-	box-sizing: border-box; 
+	box-sizing: border-box;
 	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box; 
+	-moz-box-sizing: border-box;
 	padding: 8px;
 	outline: none;
-	border: 1px solid #B0CFE0;
+	border: 1px solid #B0CFE0 bold;
 	-webkit-transition: all 0.30s ease-in-out;
 	-moz-transition: all 0.30s ease-in-out;
 	-ms-transition: all 0.30s ease-in-out;
@@ -103,37 +105,58 @@ p{text-align: center;margin: 5px;color: #232323;font-size: 20px;}
 	border:1px solid #B0CFE0;
 }
 .form-style ul li .field-split{
-	width: 49%;
+	width: 50%;
 }
-.form-style ul li .field-full{
-	width: 100%;
-}
-.form-style ul li input.align-left{
-	float:left;
-}
-.form-style ul li input.align-right{
-	float:right;
-}
+
+
 .form-style ul li textarea{
 	width: 100%;
 	height: 100px;
+	float: center;
 }
-.form-style ul li input[type="button"], 
+.form-style ul li input[type="button"],
 .form-style ul li input[type="submit"] {
 	-moz-box-shadow: inset 0px 1px 0px 0px #3985B1;
 	-webkit-box-shadow: inset 0px 1px 0px 0px #3985B1;
 	box-shadow: inset 0px 1px 0px 0px #3985B1;
-	background-color: #216288;
+	background-color: black;
 	border: 1px solid #17445E;
 	display: inline-block;
 	cursor: pointer;
-	color: #FFFFFF;
-	padding: 8px 18px;
+	color: silver;
+	padding: 10px 25px;
 	text-decoration: none;
 	font: 12px Arial, Helvetica, sans-serif;
 }
-.form-style ul li input[type="button"]:hover, 
+.form-style ul li input[type="button"]:hover,
 .form-style ul li input[type="submit"]:hover {
 	background: linear-gradient(to bottom, #2D77A2 5%, #337DA8 100%);
 	background-color: #28739E;
+
+}
+table {
+    border: solid 1px #DDEEEE;
+    border-collapse: collapse;
+    border-spacing: 0;
+    font: normal 13px Arial, sans-serif;
+		margin:20px;
+		max-width: 1000px;
+		text-align:center;
+
+}
+table thead th {
+    background-color: saddlebrown;
+    border: solid 1px #DDEEEE;
+		border-radius: 10px;
+    color: antiquewhite;
+    padding: 30px;
+    text-align: center;
+
+
+}
+table tbody td {
+    border: solid 1px #DDEEEE;
+    color: #333;
+    padding: 10px;
+    text-shadow: 1px 1px 1px #fff;
 }
