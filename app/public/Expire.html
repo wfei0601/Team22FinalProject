@@ -42,7 +42,7 @@
 
   <div class="row">
     <div id="mainContent" class="col">
-      <div id="fighterRecordApp">
+      <div id="fighterApp">
           <table class="table" id="SortTask">
             <thead>
               <tr v-if="!filter.Gender || f.Gender==filter.Gender">
@@ -57,8 +57,8 @@
               <tr v-for="F in fighters">
                 <td>{{ F.FirstName }}</td>
                 <td>{{ F.LastName }}</td>
-                <td>{{ F.Station }}</td>
-                <td>{{ F.Radio }}</td>
+                <td>{{ F.StationNum }}</td>
+                <td>{{ F.RadioNum }}</td>
                 <td>{{ F.Email }}</td>
               </tr>
             </tbody>
@@ -82,10 +82,8 @@
   <!-- Latest compiled JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-  <script src="record.app.js"></script>
-     <script src="js/tablesort.min.js"></script>
-  <script>
- new Tablesort(document.getElementById('SortTask'));
-</script>
+  <script src="fighter.app.js"></script>
+  <script src="js/tablesort.min.js"></script>
+  <script>new Tablesort(document.getElementById('SortTask'));</script>
 </body>
 </html>
