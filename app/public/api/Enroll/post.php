@@ -19,9 +19,9 @@ $stmt->execute([
   $_POST['StartDate'],
   $_POST['ExpireDate']
 ]);
-$EnrollmentId = $db->lastInsertId();
+$EnrollId = $db->lastInsertId();
 
 
 // Step 4: Output
 header('HTTP/1.1 303 See Other');
-header('Location: ../Enroll/?EnrollmentId='.$EnrollmentId);
+header('Location: ../Enroll/?EnrollId='.$EnrollId);
