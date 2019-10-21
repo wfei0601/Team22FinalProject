@@ -35,12 +35,12 @@
             <ul>
               <li>
                 <select class="form-control" id="inputMemberId" v-model=recordEnrollment.MemberId>
-                  <option v-for="f in fighters" v-bind:value="fighters.MemberId">{{ f.FirstName }} {{ f.LastName }}</option>
+                  <option v-for="f in fighters" v-bind:value="f.MemberId">{{ f.FirstName }} {{ f.LastName }}</option>
                 </select>
               </li>
               <li>
                 <select class="form-control" id="inputCertificationId" v-model=recordEnrollment.CertificationId>
-                  <option v-for="c in certs" v-bind:value="certs.CertificationId">{{ c.Name }}</option>
+                  <option v-for="c in certs" v-bind:value="c.CertificationId">{{ c.Name }}</option>
                 </select>
               </li>
               <li>
