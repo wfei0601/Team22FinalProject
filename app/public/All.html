@@ -32,7 +32,7 @@
       <div class="container">
         <div class="row">
           <div id="fighterApp" class="col-md-12 queueView">
-              <table class="table">
+              <table class="table" id="SortTask">
                 <thead>
                   <tr>
                     <th>First Name</th>
@@ -71,6 +71,10 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="js/fighter.app.js"></script>
+  <script src="js/tablesort.min.js"></script>
+<script>
+new Tablesort(document.getElementById('SortTask'));
+</script>
 
 </body>
 </html>

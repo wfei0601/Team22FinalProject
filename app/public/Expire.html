@@ -32,7 +32,7 @@
   <div class="row">
     <div id="mainContent" class="col">
       <div id="fighterRecordApp">
-          <table class="table table-sm table-hover">
+          <table class="table" id="SortTask">
             <thead>
               <tr>
                 <th>First Name</th>
@@ -71,5 +71,9 @@
   <!-- Latest compiled JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   <script src="record.app.js"></script>
+     <script src="js/tablesort.min.js"></script>
+  <script>
+ new Tablesort(document.getElementById('SortTask'));
+</script>
 </body>
 </html>
