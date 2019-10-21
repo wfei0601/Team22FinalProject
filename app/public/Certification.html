@@ -32,38 +32,28 @@
         <form v-on:submit.prevent="handleSubmit" class="form-style">
           <div class="wrapper row2">
             <div class="clear">
-
-
-              <ul>
-                <li>
-              <select class="custom-select" id="inputMemberId" v-model=recordEnrollment.MemberId>
-                <option v-for="f in fighters" value="fighters.MemberId">{{ f.FirstName }} {{ f.LastName }}</option>
-              </select>
-            </li>
-            <li>
-              <select class="custom-select" id="inputCertificationId" v-model=recordEnrollment.CertificationId>
-                <option selected>Certification</option>
-                <option v-for="c in certs" value="certs.CertificationId">{{ c.Name }} {{ c.Description }}</option>
-              </select>
-            </li>
-
-
+            <ul>
               <li>
-                  <input type="date" class="form-control" id="inputStartDate" placeholder="Start Date" v-model="recordEnrollment.StartDate">
-                </li>
-
-
-              <li>
-                  <input type="date" class="form-control" id="inputExpireDate" placeholder="Expire Date" v-model="recordEnrollment.ExpireDate">
-                </li>
-
-
-<br>
-<li>
-                <input type="submit">
-
+                <select class="form-control" id="inputMemberId" v-model=recordEnrollment.MemberId>
+                  <option v-for="f in fighters" v-bind:value="f.MemberId">{{ f.FirstName }} {{ f.LastName }}</option>
+                </select>
               </li>
-        </ul>
+              <li>
+                <select class="form-control" id="inputCertificationId" v-model=recordEnrollment.CertificationId>
+                  <option v-for="c in certs" v-bind:value="c.CertificationId">{{ c.Name }}</option>
+                </select>
+              </li>
+              <li>
+                <input type="date" class="form-control" id="inputStartDate" placeholder="Start Date" v-model="recordEnrollment.StartDate">
+              </li>
+              <li>
+                <input type="date" class="form-control" id="inputExpireDate" placeholder="Expire Date" v-model="recordEnrollment.ExpireDate">
+              </li>
+              <br>
+              <li>
+                <input type="submit">
+              </li>
+            </ul>
             </div>
           </div>
         </form>

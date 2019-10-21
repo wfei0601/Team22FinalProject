@@ -28,8 +28,6 @@ var testApp = new Vue({
         }
       })
       // .then( response => window.location.href='All.html')
-      .then( response => response.json() )
-      .then( json => {testApp.fighters.push( json[0] )})
       .catch( err => {
         console.error('RECORD POST ERROR:');
         console.error(err);
