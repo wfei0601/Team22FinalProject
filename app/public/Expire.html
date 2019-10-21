@@ -29,14 +29,14 @@
 </div>
 <br>
 <div class="container filter">
-  <div class="sort">
+
         <select v-model="filter.Gender">
           <option value="">(all)</option>
           <option>Male</option>
           <option>Female</option>
         </select>
       </div>
-    </div>
+
 
 <div class="container">
 
@@ -45,7 +45,7 @@
       <div id="fighterRecordApp">
           <table class="table" id="SortTask">
             <thead>
-              <tr v-if="!filter.Gender || f.Gender==filter.sab">
+              <tr v-if="!filter.Gender || f.Gender==filter.Gender">
                 <th>First Name</th>
                 <th>Last Name</th>
                 <th>Station Number</th>
