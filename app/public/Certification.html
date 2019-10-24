@@ -30,28 +30,31 @@
       <div class="container">
       <div id="testApp">
         <form v-on:submit.prevent="handleSubmit" class="form-style">
-          <div class="wrapper row2">
-            <div class="clear">
+          
+            <div class="sizing">
+                <center><h4 style="text-decoration-line: underline">Add your Certification Record</h4></center>
+                <br>
             <ul>
               <li>
-                <select class="form-control" id="inputMemberId" v-model=recordEnrollment.MemberId>
+                <label for="InputMemberId" class="label-style">Select your Name:  </label>
+                  <select class="field-style field-split" id="inputMemberId" v-model=recordEnrollment.MemberId>
                   <option v-for="f in fighters" v-bind:value="f.MemberId">{{ f.FirstName }} {{ f.LastName }}</option>
                 </select>
               </li>
               <li>
-                <select class="form-control" id="inputCertificationId" v-model=recordEnrollment.CertificationId>
+                        <label for="InputMemberId" class="label-style">Select a Certification:  </label><select class="field-style field-split" id="inputCertificationId" v-model=recordEnrollment.CertificationId>
                   <option v-for="c in certs" v-bind:value="c.CertificationId">{{ c.Name }}</option>
                 </select>
               </li>
               <li>
-                <input type="date" class="form-control" id="inputStartDate" placeholder="Start Date" v-model="recordEnrollment.StartDate">
+                        <label for="InputStartDate" class="label-style">Enter Start Date:  </label><input type="date" class="field-style field-split" id="inputStartDate" placeholder="Start Date" v-model="recordEnrollment.StartDate">
               </li>
               <li>
-                <input type="date" class="form-control" id="inputExpireDate" placeholder="Expire Date" v-model="recordEnrollment.ExpireDate">
+                        <label for="InputExpireDate" class="label-style">Enter Expire Date:  </label><input type="date" class="field-style field-split" id="inputExpireDate" placeholder="Expire Date" v-model="recordEnrollment.ExpireDate">
               </li>
               <br>
               <li>
-                <input type="submit">
+                <input type="submit" class="field-style">
               </li>
             </ul>
             </div>
