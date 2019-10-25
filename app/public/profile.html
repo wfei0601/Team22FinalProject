@@ -43,99 +43,112 @@
     <div id="fighterRecordApp">
       <form v-on:submit="handleSubmit" class="form-style">
 
-        <div class="wrapper row2">
-          <div id="container" class="clear">
+       
+          <div class="sizing">
+              <center><h4 style="text-decoration-line: underline">Fighter Registration Form</h4></center>
+              <br>
 
 <ul>
   <li>
 
-              <input type="text" class="field-style field-split" id="inputFirstName" placeholder="First Name" v-model="recordFighter.FirstName">
+      <label for="inputFirstName" class="label-style">First Name: </label>
+      <input type="text" id="inputFirstName" placeholder="First Name" class="field-style field-split" v-model="recordFighter.FirstName">
 
 </li>
 
 <li>
 
 
-                <input type="text" class="field-style field-split" id="inputLastName" placeholder="Last Name" v-model="recordFighter.LastName">
+                  <label for="inputLastName" class="label-style">Last Name: </label>
+    <input type="text" class="field-style field-split" id="inputLastName" placeholder="Last Name" v-model="recordFighter.LastName">
 </li>
 
 <li>
 
 
-                <input type="text" class="field-style field-split" id="inputGender" placeholder="Male/Female" v-model="recordFighter.Gender">
-</li>
-
-
-<li>
-
-
-                <input type="text" class="field-style field-split" id="inputDateOfBirth" placeholder="Date Of Birth" v-model="recordFighter.DateOfBirth">
+                  <label for="inputGender" class="label-style">Gender: </label>
+    <input type="text" class="field-style field-split" id="inputGender" placeholder="Male/Female" v-model="recordFighter.Gender">
 </li>
 
 
 <li>
 
 
-                    <input type="text" class="field-style field-split" id="inputStreet" placeholder="Street" v-model="recordFighter.Street">
+                            <label for="inputDateOfBirth" class="label-style">Date of Birth: </label>
+    <input type="text" class="field-style field-split" id="inputDateOfBirth" placeholder="MM/DD/YYYY" v-model="recordFighter.DateOfBirth">
+</li>
+
+
+<li>
+
+
+                                <label for="inputStreet" class="label-style">Street Address: </label>
+    <input type="text" class="field-style field-split" id="inputStreet" placeholder="Street" v-model="recordFighter.Street">
 </li>
 <li>
 
 
 
-                    <input type="text" class="field-style field-split" id="inputCity" placeholder="City" v-model="recordFighter.City">
+                     <label for="inputCity" class="label-style">City: </label>
+    <input type="text" class="field-style field-split" id="inputCity" placeholder="City" v-model="recordFighter.City">
 </li>
 
 <li>
 
 
-                <input type="text" class="field-style field-split" id="inputState" placeholder="State" v-model="recordFighter.State">
-</li>
-
-<li>
-
-
-
-                <input type="text" class="field-style field-split align-left" id="inputZip" placeholder="Zip" v-model="recordFighter.ZipCode">
-
-</li>
-
-<li>
-
-
-                <input type="text" class="field-style field-split" id="inputWorkphone" placeholder="Work Phone" v-model="recordFighter.WorkNum">
-
-</li>
-<li>
-
-
-
-
-                <input type="text" class="field-style field-split" id="inputMobilephone" placeholder="Mobile Phone" v-model="recordFighter.MobileNum">
+                 <label for="inputState" class="label-style">State: </label>
+    <input type="text" class="field-style field-split" id="inputState" placeholder="State" v-model="recordFighter.State">
 </li>
 
 <li>
 
 
 
-                <input type="text" class="field-style field-split" id="inputRadioNum" placeholder="Radio Number" v-model="recordFighter.RadioNum">
+                 <label for="inputZip" class="label-style">Zip: </label>
+    <input type="text" class="field-style field-split align-left" id="inputZip" placeholder="Zip" v-model="recordFighter.ZipCode">
+
+</li>
+
+<li>
+
+
+                 <label for="inputWorkPhone" class="label-style">Work Phone: </label><input type="text" class="field-style field-split" id="inputWorkphone" placeholder="Work Phone" v-model="recordFighter.WorkNum">
 
 </li>
 <li>
 
 
 
-                <input type="text" class="field-style field-split" id="inputStationNum" placeholder="Station Number" v-model="recordFighter.StationNum">
+
+                 <label for="inputMobilePhone" class="label-style">Mobile Phone: </label>
+    <input type="text" class="field-style field-split" id="inputMobilephone" placeholder="Mobile Phone" v-model="recordFighter.MobileNum">
+</li>
+
+<li>
+
+
+
+                 <label for="inputRadioNum" class="label-style">Radio Number: </label><input type="text" class="field-style field-split" id="inputRadioNum" placeholder="Radio Number" v-model="recordFighter.RadioNum">
+
 </li>
 <li>
 
 
 
-                <input type="email" class="field-style field-split" id="inputEmail" placeholder="Email" v-model="recordFighter.Email">
+                 <label for="inputStationNum" class="label-style">Station Number: </label>
+    <input type="text" class="field-style field-split" id="inputStationNum" placeholder="Station Number" v-model="recordFighter.StationNum">
+</li>
+<li>
+
+
+
+                 <label for="inputEmail" class="label-style">Email: </label>
+    <input type="email" class="field-style field-split" id="inputEmail" placeholder="Email" v-model="recordFighter.Email">
 </li>
 
 <br>
 <li>
-              <input type="submit">
+              <input type="submit" class="field-style">
             </li>
   </ul>
           </div>
