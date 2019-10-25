@@ -45,13 +45,18 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr v-for="f in fighters">
-                    <td>{{ f.FirstName }}</td>
-                    <td>{{ f.LastName }}</td>
-                    <td>{{ f.StationNum }}</td>
-                    <td>{{ f.RadioNum }}</td>
-                    <td>{{ f.Email }}</td>
-                  </tr>
+                    <tr v-for="f in fighters">
+                      <td>{{ f.FirstName }}</td>
+                      <td>{{ f.LastName }}</td>
+                      <td>{{ f.StationNum }}</td>
+                      <td>{{ f.RadioNum }}</td>
+                      <td>{{ f.Email }}</td>
+                      <td>
+                        <form v-on:submit.prevent="handleDelete">
+                          <input id="inputMemberId" :value="f.MemberId" name="delete" type="submit">
+                        </form>
+                      </td>
+                    </tr>
                 </tbody>
               </table>
             </div>

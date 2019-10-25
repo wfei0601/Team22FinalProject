@@ -35,7 +35,7 @@
             <ul>
               <li>
                 <select class="form-control" id="inputMemberId" v-model=recordEnrollment.MemberId>
-                  <option v-for="f in fighters" v-bind:value="f.MemberId">{{ f.FirstName }} {{ f.LastName }}</option>
+                  <option v-for="f in fighters" v-bind:value="fighters.MemberId">{{ f.FirstName }} {{ f.LastName }}</option>
                 </select>
               </li>
               <li>

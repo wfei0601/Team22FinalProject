@@ -6,31 +6,17 @@
 // Step 1: Get a datase connection from our help class
 $db = DbConnection::getConnection();
 
+$MemberId = $_POST['MemberId'];
+
 // Step 2: Create & run the query
 $stmt = $db->prepare(
-  'INSERT INTO Fighters ( FirstName, LastName, Gender,
-    Street, City, State, ZipCode, WorkNum, MobileNum, RadioNum,
-    StationNum, Email, DateOfBirth)
-  VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'
+  'DELETE FROM Fighters
+  WHERE MemberId = $MemberId'
 );
 
 $stmt->execute([
-  $_POST['FirstName'],
-  $_POST['LastName'],
-  $_POST['DateOfBirth'],
-  $_POST['Gender'],
-  $_POST['Street'],
-  $_POST['City'],
-  $_POST['State'],
-  $_POST['ZipCode'],
-  $_POST['WorkNum'],
-  $_POST['MobileNum'],
-  $_POST['RadioNum'],
-  $_POST['StationNum'],
-  $_POST['Email']
 ]);
 
-$MemberId = $db->lastInsertId();
 
 // Step 4: Output
 header('HTTP/1.1 303 See Other');

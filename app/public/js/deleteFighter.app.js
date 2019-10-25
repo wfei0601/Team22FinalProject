@@ -1,20 +1,10 @@
-var fighterApp = new Vue({
-  el: '#fighterApp',
+var fighterDeleteApp = new Vue({
+  el: '#fighterDeleteApp',
   data: {
-    fighters: [],
     deleteFighter: {}
   },
   methods: {
-    fetchFighters() {
-      // fetch('api/records/')
-      fetch('api/Fighter/index.php')
-      .then(response => response.json())
-      .then(json => { fighterApp.fighters = json })
-    },
-    handleRowClick(fighter) {
-      fighterRecordApp.fighter = fighter;
-    },
-    handleDelete(event) {
+    handleSubmit(event) {
 // console.log('Foo');
       fetch('api/Fighter/delete.php', {
         method: 'POST',
@@ -39,7 +29,6 @@ var fighterApp = new Vue({
     }
   }, // end methods
   created() {
-    this.fetchFighters();
     this.handleReset();
   }
 });
