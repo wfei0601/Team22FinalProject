@@ -45,21 +45,20 @@
       <div id="expireApp">
           <table class="table" id="SortTask">
             <thead>
-              <tr v-if="!filter.Gender || f.Gender==filter.Gender">
+              <tr>
+              <!-- <tr v-if="!filter.Gender || f.Gender==filter.Gender"> -->
                 <th>First Name</th>
                 <th>Last Name</th>
-                <th>Station Number</th>
-                <th>Radio Number</th>
-                <th>Email</th>
+                <th>Certification</th>
+                <th>Date Expired</th>
               </tr>
             </thead>
             <tbody>
-              <tr v-for="F in fighters">
-                <td>{{ F.FirstName }}</td>
-                <td>{{ F.LastName }}</td>
-                <td>{{ F.StationNum }}</td>
-                <td>{{ F.RadioNum }}</td>
-                <td>{{ F.Email }}</td>
+              <tr v-for="e in expired">
+                <td>{{ e.FirstName }}</td>
+                <td>{{ e.LastName }}</td>
+                <td>{{ e.Name }}</td>
+                <td>{{ e.ExpireDate }}</td>
               </tr>
             </tbody>
           </table>
@@ -82,8 +81,8 @@
   <!-- Latest compiled JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-  <script src="expire.app.js"></script>
+  <script src="js/expire.app.js"></script>
   <script src="js/tablesort.min.js"></script>
-  <script>new Tablesort(document.getElementById('SortTask'));</script>
+  <!-- <script>new Tablesort(document.getElementById('SortTask'));</script> -->
 </body>
 </html>

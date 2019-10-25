@@ -1,20 +1,20 @@
-var fighterApp = new Vue({
+var expireApp = new Vue({
   el: '#expireApp',
   data: {
-    fighters: []
+    expired: []
   },
   methods: {
-    fetchFighters() {
+    fetchExpired() {
       // fetch('api/records/')
-      fetch('api/Fighter/index.php')
+      fetch('api/Expire/index.php')
       .then(response => response.json())
-      .then(json => { fighterApp.fighters = json })
+      .then(json => { expireApp.expired = json })
     },
     handleRowClick(fighter) {
-      fighterRecordApp.fighter = fighter;
+      expireApp.expired = expired;
     }
   }, // end methods
   created() {
-    this.fetchFighters();
+    this.fetchExpired();
   }
 });
