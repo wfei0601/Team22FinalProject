@@ -56,32 +56,27 @@
 
       <div class="container">
         <div class="row">
-          <div id="fighterApp" class="col-md-12 queueView">
+          <div id="certApp" class="col-md-12 queueView">
             <table class="table">
               <thead>
                 <tr>
-                  <th>First Name</th>
-                  <th>Last Name</th>
-                  <th>Station Number</th>
-                  <th>Radio Number</th>
-                  <th>Email</th>
-                  <th>Delete</th>
+                  <th>Certification Name</th>
+                  <th>Description</th>
+                  <th>Valid For</th>
                 </tr>
               </thead>
               <tbody>
-                  <tr v-for="f in fighters">
-                    <td>{{ f.FirstName }}</td>
-                    <td>{{ f.LastName }}</td>
-                    <td>{{ f.StationNum }}</td>
-                    <td>{{ f.RadioNum }}</td>
-                    <td>{{ f.Email }}</td>
-                    <td>
+                  <tr v-for="c in certs">
+                    <td>{{ c.Name }}</td>
+                    <td>{{ c.Description }}</td>
+                    <td>{{ c.ValidTime }}</td>
+                    <!-- <td>
                       <form @submit.prevent="handleSubmit">
                         <input id="deleteMember">
-                          <button :value="f.MemberId" name="delete" type="submit">Delete</button>
+                          <button :value="c.CertificationId" name="delete" type="submit">Delete</button>
                         </input>
                       </form>
-                    </td>
+                    </td> -->
                   </tr>
               </tbody>
             </table>
@@ -103,7 +98,7 @@
   <!-- Latest compiled JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-  <script src="js/fighter.app.js"></script>
+  <script src="js/certification.app.js"></script>
   <script src="js/tablesort.min.js"></script>
 <!-- <script>
 new Tablesort(document.getElementById('SortTask'));

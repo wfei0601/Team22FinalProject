@@ -3,7 +3,7 @@ var fighterApp = new Vue({
   data: {
     fighters: [],
     deleteFighter: {
-      MemberId:""
+      MemberId:''
     }
   },
   methods: {
@@ -43,6 +43,6 @@ var fighterApp = new Vue({
   }, // end methods
   created() {
     this.fetchFighters();
-    this.handleReset();
+    // this.handleReset();
   }
 });
