@@ -16,8 +16,8 @@ if (isset($_GET['MemberId'])) {
       e.ExpireDate < CURRENT_DATE()
     GROUP BY c.CertificationId'
   );
-
   $stmt->execute([$_GET['MemberId']]);
+
 } else {
   $stmt = $db->prepare('SELECT f.FirstName, f.LastName, c.Name, e.ExpireDate
   FROM Fighters f, Enrollment e, Certifications c

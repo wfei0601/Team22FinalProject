@@ -34,35 +34,37 @@
       <div class="container">
         <div class="row">
           <div id="fighterApp" class="col-md-12 queueView">
-              <table class="table" id="SortTask">
-                <thead>
-                  <tr>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Station Number</th>
-                    <th>Radio Number</th>
-                    <th>Email</th>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>First Name</th>
+                  <th>Last Name</th>
+                  <th>Station Number</th>
+                  <th>Radio Number</th>
+                  <th>Email</th>
+                  <th>Delete</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <tr v-for="f in fighters">
+                    <td>{{ f.FirstName }}</td>
+                    <td>{{ f.LastName }}</td>
+                    <td>{{ f.StationNum }}</td>
+                    <td>{{ f.RadioNum }}</td>
+                    <td>{{ f.Email }}</td>
+                    <td>
+                      <form @submit.prevent="handleSubmit">
+                        <input type="text" id="deleteMember" :value="f.MemberId"></input>
+                        <button name="delete" type="submit">Delete</button>
+                      </form>
+                    </td>
                   </tr>
-                </thead>
-                <tbody>
-                    <tr v-for="f in fighters">
-                      <td>{{ f.FirstName }}</td>
-                      <td>{{ f.LastName }}</td>
-                      <td>{{ f.StationNum }}</td>
-                      <td>{{ f.RadioNum }}</td>
-                      <td>{{ f.Email }}</td>
-                      <td>
-                        <form v-on:submit.prevent="handleDelete">
-                          <input id="inputMemberId" :value="f.MemberId" name="delete" type="submit">
-                        </form>
-                      </td>
-                    </tr>
-                </tbody>
-              </table>
-            </div>
+              </tbody>
+            </table>
           </div>
         </div>
-      </main>
+      </div>
+    </main>
 <div class="wrapper row3">
   <footer id="footer" class="clear">
       <center>All Rights Reserved - Team 22 MSIS Core</center>
@@ -79,9 +81,9 @@
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="js/fighter.app.js"></script>
   <script src="js/tablesort.min.js"></script>
-<script>
+<!-- <script>
 new Tablesort(document.getElementById('SortTask'));
-</script>
+</script> -->
 
 </body>
 </html>
