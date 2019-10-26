@@ -31,7 +31,7 @@ div.wrapper{display:block; width:100%; margin:0; padding:0; text-align:left;}
 
 #header, #container, #footer{display:block; width:960px; margin:0 auto;}
 
-nav ul{margin:0; padding:0; list-style:none;}
+nav ul{margin:0; padding:0; list-style:none;width:200%;}
 
 h2{margin:20px; color:#232323;}
 p{text-align: center;margin: 5px;color: #232323;font-size: 20px;}
@@ -103,7 +103,7 @@ p{text-align: center;margin: 5px;color: #232323;font-size: 20px;}
 	-ms-transition: all 0.30s ease-in-out;
 	-o-transition: all 0.30s ease-in-out;
     float:right;
-    
+
 
 }
 
