@@ -46,9 +46,9 @@ p{text-align: center;margin: 5px;color: #232323;font-size: 20px;}
 #header #hgroup h2{font-size:13px;}
 
 
-#header nav{display:block; width:100%; margin:0; padding:20px 0; color:#C0BAB6; background-color:#232323; clear:both;}
+#header nav{display:block; width:100%; margin:0; padding:10px 0; color:#C0BAB6; background-color:#232323; clear:both;}
 #header nav ul{padding:0 10px;}
-#header nav li{display:inline; margin-right:25px; text-transform:uppercase;}
+#header nav li{display:inline; margin-right:290px; text-transform:uppercase;text-align: left;}
 #header nav li.last{margin-right:0;}
 #header nav li a{color:#C0BAB6; background-color:#232323;}
 #header nav li a:hover{color:#FF9900; background-color:#232323;}
