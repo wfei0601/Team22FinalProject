@@ -14,7 +14,8 @@ if (isset($_GET['MemberId'])) {
     WHERE f.MemberId = e.MemberId AND
       e.CertificationId = c.CertificationId AND
       e.ExpireDate < CURRENT_DATE()
-    GROUP BY c.CertificationId'
+    GROUP BY f.MemberId, c.CertificationId
+    ORDER BY e.ExpireDate DESC'
   );
   $stmt->execute([$_GET['MemberId']]);
 
@@ -24,7 +25,8 @@ if (isset($_GET['MemberId'])) {
   WHERE f.MemberId = e.MemberId AND
     e.CertificationId = c.CertificationId AND
     e.ExpireDate < CURRENT_DATE()
-  GROUP BY c.CertificationId');
+  GROUP BY f.MemberId, c.CertificationId
+  ORDER BY e.ExpireDate DESC');
   $stmt->execute();
 }
 
