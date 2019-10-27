@@ -15,8 +15,8 @@ $stmt = $db->prepare(
 
 $stmt->execute([
   $_POST['Name'],
-  $_POST['Description'],
-  $_POST['ValidTime']
+  $_POST['CertifyAgency'],
+  $_POST['ExpirationPeriod']
 ]);
 $CertificationId = $db->lastInsertId();
 

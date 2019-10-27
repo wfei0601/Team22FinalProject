@@ -23,8 +23,8 @@ var certRecordApp = new Vue({
     handleReset() {
       this.recordCert = {
         Name: '',
-        Description: '',
-        ValidTime: ''
+        CertifyAgency: '',
+        ExpirationPeriod: ''
       }
     }
   }, // end methods
