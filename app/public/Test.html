@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>OCFR-ALL</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/layout.css" type="text/css">
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="wrapper row1">
+    <header id="header" class="clear">
+      <div id="hgroup">
+          <h1>Oconee County Fire Rescue</h1>
+      </div>
+
+          <nav class="navbar navbar-expand-lg navbar-dark">
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+              <ul class="navbar-nav">
+                <li class="nav-item active">
+                  <a class="nav-link" href="index.html">Home<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Firefighters
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="All.html">Display All Firefighters</a>
+                    <a class="dropdown-item" href="profile.html">Add New Firefighters</a>
+                    <a class="dropdown-item" href="Certification.html">Record Certifications</a>
+                    <a class="dropdown-item" href="Expire.html">Display Expired Certifications</a>
+                  </div>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Certifications
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="allCerts.html">Display All Certifications</a>
+                    <a class="dropdown-item" href="certAdd.html">Add New Certifications</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </nav>
+    </header>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div id="mainContent" class="col-md">
+        <div id="patientRecordsApp">
+          <form @submit.prevent="handleSubmit">
+            <div class="form-group row">
+              <label for="inputFirstName" class="col-sm-2 col-form-label">First Name</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="inputFirstName" placeholder="First Name" v-model="recordPatient.firstName">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="inputLastName" class="col-sm-2 col-form-label">Last Name</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="inputLastName" placeholder="Last Name" v-model="recordPatient.lastName">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="inputDob" class="col-sm-2 col-form-label">DOB</label>
+              <div class="col-sm-10">
+                <input type="date" class="form-control" id="inputDob" placeholder="2001-12-13" v-model="recordPatient.dob">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="inputSexAtBirth" class="col-sm-2 col-form-label">Sex At Birth</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="inputSexAtBirth" placeholder="M|F" v-model="recordPatient.sexAtBirth">
+              </div>
+            </div>
+
+
+            <div class="form-group row">
+              <div class="col-sm-10">
+                <button type="submit" class="btn btn-primary">Create Patient Record</button>
+              </div>
+            </div>
+          </form>
+
+          <div class="filter">
+            <select v-model="filter.sab">
+              <option value="">(all)</option>
+              <option>M</option>
+              <option>F</option>
+            </select>
+          </div>
+          <table class="table table-sm table-hover">
+            <thead>
+              <tr>
+                <th>GUID</th>
+                <th>First</th>
+                <th>Last</th>
+                <th>DOB</th>
+                <th>SAB</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="p in patients" @click="handleRowClick(p)"
+              v-if="filter.sab=='' || filter.sab == p.sexAtBirth">
+                <td>{{ p.patientGuid }}</td>
+                <td>{{ p.firstName }}</td>
+                <td>{{ p.lastName }}</td>
+                <td>{{ p.dob }}</td>
+                <td>{{ p.sexAtBirth }}</td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+
+        <div id="patientTriageApp">
+          <noscript>This form requires Javascript!</noscript>
+          <form @submit.prevent="handleSubmit">
+            <div class="row">
+              <div class="form-group col-md-6">
+                <input type="text" class="form-control" id="triageFirstName" placeholder="First Name" v-model="patient.firstName" readonly>
+              </div>
+              <div class="form-group col-md-6">
+                <input type="text" class="form-control" id="triageLastName" placeholder="Last Name" v-model="patient.lastName" readonly>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="form-group col-md-4">
+                <input type="date" class="form-control" id="triageDob" placeholder="2001-12-13" v-model="patient.dob" readonly>
+              </div>
+              <div class="col"></div>
+              <div class="form-group col-md-2">
+                <input type="text" class="form-control" id="triageSexAtBirth" placeholder="M|F" v-model="patient.sexAtBirth" readonly>
+              </div>
+            </div>
+
+
+            <div class="form-group row">
+              <label for="triageDescription" class="col-sm-2 col-form-label">Reason for Visit</label>
+              <div class="col-sm-10">
+                <textarea class="form-control" id="triageDescription" placeholder="Symptoms; reason for visit" v-model="patient.visitDescription"></textarea>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="triagePriority" class="col-sm-2 col-form-label">Priority</label>
+              <div class="col-sm-10">
+                <select class="form-control" id="triagePriority" v-model="patient.priority" required>
+                  <option value="Low">Low</option>
+                  <option value="Medium">Medium</option>
+                  <option value="High">High</option>
+                </select>
+              </div>
+            </div>
+
+
+            <div class="form-group row">
+              <div class="col-sm-10">
+                <button type="submit" class="btn btn-primary">Admit Patient</button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+      </div>
+
+      <div id="patientWaitingApp" class="col-md-3 queueView">
+        <div class="patient patientWaiting"
+        :class="patient.priority + 'Priority'"
+        v-for="patient in patients">
+          {{ displayWaitingLocalDate(patient.visitDateUtc) }}<br>
+          <small>{{ displayWaitingSince(patient.visitDateUtc) }}</small><br>
+          <span class="patientName">{{ patient.lastName }}</span>,
+          <span class="patientName">{{ patient.firstName }}</span><br>
+          {{ patient.sexAtBirth }} {{ patient.dob }}
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+
+  <script src="js/waiting.app.js"></script>
+  <script src="js/record.app.js"></script>
+  <script src="js/triage.app.js"></script>
+</body>
+</html>

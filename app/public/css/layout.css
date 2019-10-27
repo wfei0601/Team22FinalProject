@@ -1,0 +1,170 @@
+
+html{overflow-y:scroll;}
+
+body{margin:0; padding:0; font-size:13px; font-family:Georgia, "Times New Roman", Times, serif; color:#919191; background-color:#232323;}
+
+.clear:after{content:"."; display:block; height:0; clear:both; visibility:hidden; line-height:0;}
+.clear{display:block; clear:both;}
+html[xmlns] .clear{display:block;}
+* html .clear{height:1%;}
+
+a{outline:none; text-decoration:none;}
+
+code{font-weight:normal; font-style:normal; font-family:Georgia, "Times New Roman", Times, serif;}
+
+.fl_left{float:left;}
+.fl_right{float:right;}
+
+img{margin:0; padding:0; border:none; vertical-align:middle;align-content: center;}
+
+.label-style{font-weight: bold;margin-right:20px;color:black;text-align: left;}
+
+
+
+div.wrapper{display:block; width:100%; margin:0; padding:0; text-align:left;}
+
+.row1, .row1 a{color:#C0BAB6; background-color:#333333;}
+.row2{color:#979797; background-color:#FFFFFF;}
+.row2 a{color:#FF9900; background-color:#FFFFFF;}
+.row3, .row3 a{color:#919191; background-color:#232323;}
+
+
+#header, #container, #footer{display:block; width:960px; margin:0 auto;}
+
+nav ul{margin:0; padding:0; list-style:none;width:200%;}
+
+h2{margin:20px; color:#232323;}
+p{text-align: center;margin: 5px;color: #232323;font-size: 20px;}
+
+
+
+#header{padding:20px 0;}
+
+#header #hgroup{margin:0 0 20px 0;float:middle;}
+#header #hgroup h1, #header #hgroup h2{font-weight:bold; text-transform:none;text-align: center}
+#header #hgroup h1{font-size:36px;}
+#header #hgroup h2{font-size:13px;}
+
+
+#header nav{display:block; width:100%; margin:0; padding:10px 0; color:#C0BAB6; background-color:#232323; clear:both;}
+#header nav ul{padding:0 10px;}
+#header nav li{display:inline; margin-right:290px; text-transform:uppercase;text-align: left;}
+#header nav li.last{margin-right:0;}
+#header nav li a{color:#C0BAB6; background-color:#232323;}
+#header nav li a:hover{color:#FF9900; background-color:#232323;}
+
+
+
+#container{padding: 30px 0;}
+
+#container #homepage{line-height:1.6em;}
+
+
+.sizing{width:550px; padding:20px;;display:block;}
+
+#footer{padding:20px 0;}
+#footer p{margin:0; padding:0;float: middle;}
+
+
+
+.form-style{
+	max-width: 600px;
+	background:#eb6629;
+	padding: 20px;
+	margin: 50px auto;
+	box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.35);
+	border-radius: 30px;
+	border: 20px;
+
+
+}
+.form-style ul{
+
+	margin:0;
+	list-style:none;
+    width:400px;
+}
+.form-style ul li{
+	display: block;
+	margin-bottom: 20px;
+	min-height: 35px;
+
+    width:400px;
+}
+.form-style ul li  .field-style{
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	padding: 8px;
+	outline: none;
+	border: 1px solid #B0CFE0 bold;
+	-webkit-transition: all 0.30s ease-in-out;
+	-moz-transition: all 0.30s ease-in-out;
+	-ms-transition: all 0.30s ease-in-out;
+	-o-transition: all 0.30s ease-in-out;
+    float:right;
+
+
+}
+
+.form-style ul li .field-split{
+	width: 50%;
+
+
+}
+
+
+.form-style ul li textarea{
+	width: 100%;
+	height: 100px;
+	float: center;
+
+}
+.form-style ul li input[type="button"],
+.form-style ul li input[type="submit"] {
+	-moz-box-shadow: inset 0px 1px 0px 0px #3985B1;
+	-webkit-box-shadow: inset 0px 1px 0px 0px #3985B1;
+	box-shadow: inset 0px 1px 0px 0px #3985B1;
+	background-color: black;
+	border: 1px solid #17445E;
+	display: inline-block;
+	cursor: pointer;
+	color: silver;
+	padding: 10px 25px;
+	text-decoration: none;
+	font: 12px Arial, Helvetica, sans-serif;
+}
+.form-style ul li input[type="button"]:hover,
+.form-style ul li input[type="submit"]:hover {
+	background: linear-gradient(to bottom, #2D77A2 5%, #337DA8 100%);
+	background-color: #28739E;
+
+}
+table {
+    border: solid 1px #DDEEEE;
+    border-collapse: collapse;
+    border-spacing: 0;
+    font: normal 13px Arial, sans-serif;
+		margin:20px;
+		max-width: 1000px;
+		text-align:center;
+
+}
+table thead th {
+    background-color: saddlebrown;
+    border: solid 1px #DDEEEE;
+		border-radius: 10px;
+    color: antiquewhite;
+    padding: 30px;
+    text-align: center;
+
+
+}
+table tbody td {
+    border: solid 2px black;
+    background-color:seashell;
+    color: #333;
+    padding: 10px;
+    text-shadow: 1px 1px 1px #fff;
+    align-content: center;
+}
