@@ -53,14 +53,6 @@
     </header>
 </div>
 <br>
-<div class="container filter">
-
-        <select v-model="filter.Gender">
-          <option value="">(all)</option>
-          <option>Male</option>
-          <option>Female</option>
-        </select>
-      </div>
 
 
 <div class="container">
@@ -68,10 +60,18 @@
   <div class="row">
     <div id="mainContent" class="col">
       <div id="expireApp">
+          <div class="filter">
+
+        <select v-model="filter.ExpireDate">
+          <option value="">(all)</option>
+          <option>Expired</option>
+          <option>Current</option>
+        </select>
+      </div>
+
           <table class="table" id="SortTask">
             <thead>
               <tr>
-              <!-- <tr v-if="!filter.Gender || f.Gender==filter.Gender"> -->
                 <th>First Name</th>
                 <th>Last Name</th>
                 <th>Certification</th>
@@ -79,7 +79,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr v-for="e in expired">
+              <tr v-for="e in expired" @click="handleRowClick(p)" v-if="!filter.ExpireDate || e.ExpireDate==filter.ExpireDate">>
                 <td>{{ e.FirstName }}</td>
                 <td>{{ e.LastName }}</td>
                 <td>{{ e.Name }}</td>
