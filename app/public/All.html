@@ -71,15 +71,14 @@
                   </tr>
                 </thead>
                 <tbody>
-                    <tr v-for="f in fighters"  @click="handleRowClick(f)">
-                      <td>{{ f.FirstName }}</td>
-                      <td>{{ f.LastName }}</td>
-                      <td>{{ f.StationNum }}</td>
-                      <td>{{ f.RadioNum }}</td>
-                      <td>{{ f.Email }}</td>
-                      <td>{{ f.MemberId }}</td>
+                    <tr v-for="f in fighters">
+                      <td @click="handleRowClick(f)">{{ f.FirstName }}</td>
+                      <td @click="handleRowClick(f)">{{ f.LastName }}</td>
+                      <td @click="handleRowClick(f)">{{ f.StationNum }}</td>
+                      <td @click="handleRowClick(f)">{{ f.RadioNum }}</td>
+                      <td @click="handleRowClick(f)">{{ f.Email }}</td>
                       <td>
-                        <input type="submit" name="delete" :value="f.MemberId">
+                        <input @click="handleDelete(f)" type="submit" name="delete" value="Delete">
                       </td>
                       <!-- <td>
                         <form v-model="deleteFighter.MemberId" @submit.prevent="handleSubmit">

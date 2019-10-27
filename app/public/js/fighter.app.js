@@ -2,8 +2,8 @@ var fighterApp = new Vue({
   el: '#fighterApp',
   data: {
     fighters: [],
-    fighter: {
-    }
+    fighter: {},
+    detail: {}
   },
   methods: {
     fetchFighters() {
@@ -16,8 +16,9 @@ var fighterApp = new Vue({
     //   fighterApp.fighter = fighter
     //   .then( response => window.location.href='All.html')
     // },
-    handleDelete() {
-      console.log(this.fighter);
+    handleDelete(fighter) {
+      fighterApp.fighter = fighter;
+      // console.log(this.fighter);
       fetch('../api/Fighter/delete.php', {
         method: 'POST',
         body: JSON.stringify(this.fighter),
@@ -35,8 +36,11 @@ var fighterApp = new Vue({
       this.handleReset();
     },
     handleRowClick(fighter) {
-      fighterApp.fighter = fighter;
-      this.handleDelete();
+      // fighterApp.fighter = fighter;
+      fighterApp.detail = fighter;
+      response => window.location.href='All.html';
+      console.log(fighterApp.detail.MemberId)
+      // this.handleDelete();
     },
     handleReset() {
       this.fighter = {
