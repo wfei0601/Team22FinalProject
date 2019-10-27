@@ -79,7 +79,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr v-for="e in expired" @click="handleRowClick(p)" v-if="!filter.ExpireDate || e.ExpireDate==filter.ExpireDate">>
+              <tr v-for="e in expired" v-if="!filter.ExpireDate || e.ExpireDate==filter.ExpireDate">
                 <td>{{ e.FirstName }}</td>
                 <td>{{ e.LastName }}</td>
                 <td>{{ e.Name }}</td>
