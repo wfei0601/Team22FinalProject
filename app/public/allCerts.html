@@ -62,22 +62,16 @@
               <thead>
                 <tr>
                   <th>Certification Name</th>
-                  <th>Description</th>
-                  <th>Valid For</th>
+                  <th>Certify Agency</th>
+                  <th>Expiration Period</th>
                 </tr>
               </thead>
               <tbody>
                   <tr v-for="c in certs">
                     <td>{{ c.Name }}</td>
-                    <td>{{ c.Description }}</td>
-                    <td>{{ c.ValidTime }}</td>
-                    <!-- <td>
-                      <form @submit.prevent="handleSubmit">
-                        <input id="deleteMember">
-                          <button :value="c.CertificationId" name="delete" type="submit">Delete</button>
-                        </input>
-                      </form>
-                    </td> -->
+                    <td>{{ c.CertifyAgency }}</td>
+                    <td>{{ c.ExpirationPeriod }}</td>
+      
                   </tr>
               </tbody>
             </table>
