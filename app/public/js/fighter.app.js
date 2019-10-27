@@ -38,9 +38,10 @@ var fighterApp = new Vue({
     handleRowClick(fighter) {
       // fighterApp.fighter = fighter;
       fighterApp.detail = fighter;
-      response => window.location.href='All.html';
+      window.location.assign("fighterDetails.html?MemberId="+fighterApp.detail.MemberId);
       console.log(fighterApp.detail.MemberId)
       // this.handleDelete();
+
     },
     handleReset() {
       this.fighter = {

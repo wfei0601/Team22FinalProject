@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>OCFR-ALL</title>
+  <title>OCFR-DisplayCerts</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/layout.css" type="text/css">
@@ -17,7 +17,7 @@
           <h1>Oconee County Fire Rescue</h1>
       </div>
 
-              <nav class="navbar navbar-expand-lg navbar-dark">
+          <nav class="navbar navbar-expand-lg navbar-dark">
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -58,35 +58,40 @@
       <div class="container">
         <div class="row">
           <div id="certApp" class="col-md-12 queueView">
-            <form @submit.prevent="handleDeleteC(c)" method="post">
+            <form method="post">
               <table class="table">
                 <thead>
-                  <tr @click="handleRowClick(c)">
-                    <th>Certification Name</th>
-                    <th>Description</th>
-                    <th>Valid For</th>
+                  <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Station Number</th>
+                    <th>Radio Number</th>
+                    <th>Email</th>
                     <th>Delete</th>
                   </tr>
                 </thead>
                 <tbody>
                     <tr v-for="c in certs">
-                      <td>{{ c.Name }}</td>
-                      <td>{{ c.CertifyAgency }}</td>
-                      <td>{{ c.ExpirationPeriod }}</td>
+                      <td @click="handleRowClick(c)">{{ c.Name }}</td>
+                      <td @click="handleRowClick(c)">{{ c.CertifyAgency }}</td>
+                      <td @click="handleRowClick(c)">{{ c.ExpirationPeriod }}</td>
                       <td>
-                        <input type="submit" name="deletec" value="Delete">
+                        <input @click="handleDelete(c)" type="submit" name="delete" value="Delete">
                       </td>
                       <!-- <td>
-                        <form @submit.prevent="handleSubmit">
-                          <input id="deleteMember">
-                            <button :value="c.CertificationId" name="delete" type="submit">Delete</button>
-                          </input>
+                        <form v-model="deleteFighter.MemberId" @submit.prevent="handleSubmit">
+                          <input type='submit' :value='f.MemberId'></input>
                         </form>
                       </td> -->
                     </tr>
                 </tbody>
               </table>
             </form>
+            <!-- <form @submit.prevent="handleSubmit">
+              <input :value="deleteFighter.MemberId">
+              </input>
+              <button name="delete" type="submit">Delete</button>
+            </form> -->
           </div>
         </div>
       </div>
