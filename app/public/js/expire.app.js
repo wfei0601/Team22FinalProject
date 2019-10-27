@@ -1,7 +1,8 @@
 var expireApp = new Vue({
   el: '#expireApp',
   data: {
-    expired: []
+    expired: [],
+    filter: {ExpireDate: ''}
   },
   methods: {
     fetchExpired() {
