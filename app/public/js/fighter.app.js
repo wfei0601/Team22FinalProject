@@ -2,7 +2,7 @@ var fighterApp = new Vue({
   el: '#fighterApp',
   data: {
     fighters: [],
-    deleteFighter: {
+    fighter: {
       MemberId:''
     }
   },
@@ -17,16 +17,16 @@ var fighterApp = new Vue({
     //   fighterApp.fighter = fighter
     //   .then( response => window.location.href='All.html')
     // },
-    handleSubmit(event) {
-// console.log('Foo');
+    handleDelete() {
+      console.log(this.fighter.MemberId);
       fetch('api/Fighter/delete.php', {
         method: 'POST',
-        body: JSON.stringify(this.deleteFighter),
+        body: JSON.stringify(this.fighter.MemberId),
         headers: {
           "Content-Type": "application/json; charset=utf-8"
         }
       })
-      .then( response => window.location.href='All.html')
+      // .then( response => window.location.href='All.html')
       // .then( response => response.json() )
       // .then( json => {fighterRecordApp.fighters.push( json[0] )})
       .catch( err => {
@@ -35,8 +35,12 @@ var fighterApp = new Vue({
       });
       this.handleReset();
     },
+    handleRowClick(fighter) {
+      fighterApp.fighter = fighter;
+      this.handleDelete();
+    },
     handleReset() {
-      this.deleteFighter = {
+      this.fighter = {
           MemberId: ''
       }
     }

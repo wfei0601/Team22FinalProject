@@ -17,7 +17,7 @@
           <h1>Oconee County Fire Rescue</h1>
       </div>
 
-              <nav class="navbar navbar-expand-lg navbar-dark">
+          <nav class="navbar navbar-expand-lg navbar-dark">
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -58,34 +58,38 @@
       <div class="container">
         <div class="row">
           <div id="fighterApp" class="col-md-12 queueView">
-            <table class="table">
-              <thead>
-                <tr>
-                  <th>First Name</th>
-                  <th>Last Name</th>
-                  <th>Station Number</th>
-                  <th>Radio Number</th>
-                  <th>Email</th>
-                  <th>Delete</th>
-                </tr>
-              </thead>
-              <tbody>
-                  <tr v-for="f in fighters">
-                    <td>{{ f.FirstName }}</td>
-                    <td>{{ f.LastName }}</td>
-                    <td>{{ f.StationNum }}</td>
-                    <td>{{ f.RadioNum }}</td>
-                    <td>{{ f.Email }}</td>
-                    <td>
-                      <form @submit.prevent="handleSubmit">
-                        <input id="deleteMember">
-                          <button :value="f.MemberId" name="delete" type="submit">Delete</button>
-                        </input>
-                      </form>
-                    </td>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Station Number</th>
+                    <th>Radio Number</th>
+                    <th>Email</th>
+                    <th>Delete</th>
                   </tr>
-              </tbody>
-            </table>
+                </thead>
+                <tbody>
+                    <tr v-for="f in fighters"  @click="handleRowClick(f)">
+                      <td>{{ f.FirstName }}</td>
+                      <td>{{ f.LastName }}</td>
+                      <td>{{ f.StationNum }}</td>
+                      <td>{{ f.RadioNum }}</td>
+                      <td>{{ f.Email }}</td>
+                      <td>{{ f.MemberId }}</td>
+                      <!-- <td>
+                        <form v-model="deleteFighter.MemberId" @submit.prevent="handleSubmit">
+                          <input type='submit' :value='f.MemberId'></input>
+                        </form>
+                      </td> -->
+                    </tr>
+                </tbody>
+              </table>
+            <!-- <form @submit.prevent="handleSubmit">
+              <input :value="deleteFighter.MemberId">
+              </input>
+              <button name="delete" type="submit">Delete</button>
+            </form> -->
           </div>
         </div>
       </div>

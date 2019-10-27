@@ -1,19 +1,19 @@
 var fighterDeleteApp = new Vue({
   el: '#fighterDeleteApp',
   data: {
-    deleteFighter: {}
+    fighter: {}
   },
   methods: {
-    handleSubmit(event) {
+    handleSubmit() {
 // console.log('Foo');
       fetch('api/Fighter/delete.php', {
         method: 'POST',
-        body: JSON.stringify(this.deleteFighter),
+        body: JSON.stringify(this.fighter),
         headers: {
           "Content-Type": "application/json; charset=utf-8"
         }
       })
-      .then( response => window.location.href='All.html')
+      // .then( response => window.location.href='All.html')
       // .then( response => response.json() )
       // .then( json => {fighterRecordApp.fighters.push( json[0] )})
       .catch( err => {
@@ -23,7 +23,7 @@ var fighterDeleteApp = new Vue({
       this.handleReset();
     },
     handleReset() {
-      this.deleteFighter = {
+      this.fighter = {
           MemberId: ''
       }
     }

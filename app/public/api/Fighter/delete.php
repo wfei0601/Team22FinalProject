@@ -6,15 +6,16 @@
 // Step 1: Get a datase connection from our help class
 $db = DbConnection::getConnection();
 
-$MemberId = $_POST['MemberId'];
+$MemberId = $_POST('MemberId')
 
 // Step 2: Create & run the query
 $stmt = $db->prepare(
   'DELETE FROM Fighters
-  WHERE MemberId = $MemberId'
+  WHERE MemberId = '$MemberId''
 );
 
 $stmt->execute([
+  $_POST['MemberId']
 ]);
 
 
