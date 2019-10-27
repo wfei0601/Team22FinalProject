@@ -6,19 +6,18 @@
 // Step 1: Get a datase connection from our help class
 $db = DbConnection::getConnection();
 
-$MemberId = $_POST('MemberId')
-
+$MemberId = $_REQUEST['MemberId'];
 // Step 2: Create & run the query
 $stmt = $db->prepare(
-  'DELETE FROM Fighters
-  WHERE MemberId = '$MemberId''
+  "DELETE FROM 'Fighters'
+  WHERE 'MemberId' = '$MemberId'"
 );
 
 $stmt->execute([
-  $_POST['MemberId']
+
 ]);
 
 
 // Step 4: Output
 header('HTTP/1.1 303 See Other');
-header('Location: ../Fighter/?MemberId='.$MemberId);
+header('Location: ../Fighter/index.php');

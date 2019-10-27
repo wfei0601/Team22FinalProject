@@ -19,8 +19,8 @@ var fighterApp = new Vue({
     // },
     handleDelete() {
       console.log(this.fighter.MemberId);
-      fetch('api/Fighter/delete.php', {
-        method: 'POST',
+      fetch('../api/Fighter/delete.php', {
+        method: 'GET',
         body: JSON.stringify(this.fighter.MemberId),
         headers: {
           "Content-Type": "application/json; charset=utf-8"
