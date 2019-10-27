@@ -65,77 +65,97 @@
   </div>
 
   <main>
-    <div id="certRecordApp">
-<<<<<<< HEAD
+    <div id="fDetailApp">
       <form v-on:submit="handleSubmit" class="form-style">
-  
+
+
           <div class="sizing">
-              <center><h4 style="text-decoration-line: underline">Add New Certification Type</h4></center>
+              <center><h4 style="text-decoration-line: underline">Fighter Registration Form</h4></center>
               <br>
 
 <ul>
   <li>
+      <label for="inputFirstName" class="label-style">First Name: </label>
+      <input type="text" id="inputFirstName" :value="fighter.FirstName" class="field-style field-split" v-model="fighter.FirstName">
+  </li>
 
-      <label for="inputName" class="label-style">Certification Name: </label>
-      <input type="text" id="inputName" placeholder="Certification Name" class="field-style field-split" v-model="recordCert.Name">
-            
-</li>
+  <li>
+    <label for="inputLastName" class="label-style">Last Name: </label>
+    <input type="text" class="field-style field-split" id="inputLastName" :value="fighter.LastName" v-model="fighter.LastName">
+  </li>
 
-<li>
+  <li>
+    <label for="inputGender" class="label-style">Gender: </label>
+    <input type="text" class="field-style field-split" id="inputGender" :value="Fighter.Gender" v-model="fighter.Gender">
+  </li>
 
+  <li>
+    <label for="inputDateOfBirth" class="label-style">Date of Birth: </label>
+    <input type="text" class="field-style field-split" id="inputDateOfBirth" :value="fighter.DateOfBirth" v-model="fighter.DateOfBirth">
+  </li>
 
-                  <label for="inputCertifyAgency" class="label-style">Certify Agency: </label>
-    <input type="text" class="field-style field-split" id="inputCertifyAgency" placeholder="CertifyAgency" v-model="recordCert.CertifyAgency">
- 
-</li>
+  <li>
+    <label for="inputStreet" class="label-style">Street Address: </label>
+    <input type="text" class="field-style field-split" id="inputStreet" :value="fighter.Street" v-model="fighter.Street">
+  </li>
 
-<li>
+  <li>
+    <label for="inputCity" class="label-style">City: </label>
+    <input type="text" class="field-style field-split" id="inputCity" :value="fighter.City" v-model="fighter.City">
+  </li>
 
+  <li>
+    <label for="inputState" class="label-style">State: </label>
+    <input type="text" class="field-style field-split" id="inputState" :value="fighter.State" v-model="fighter.State">
+  </li>
 
-                  <label for="inputExpirationPeriod" class="label-style">Expiration Period: </label>
-    <input type="text" class="field-style field-split" id="inputExpirationPeriod" placeholder="# Years/Months" v-model="recordCert.ValidTime">
-     
-</li>
+  <li>
+    <label for="inputZip" class="label-style">Zip: </label>
+    <input type="text" class="field-style field-split align-left" id="inputZip" :value="fighter.ZipCode" v-model="fighter.ZipCode">
+  </li>
 
-=======
-      <form v-on:submit="handleSubmit">
-      <!-- <form> -->
-        <div class="wrapper row2">
-          <div id="container" class="clear">
+  <li>
+   <label for="inputWorkPhone" class="label-style">Work Phone: </label>
+   <input type="text" class="field-style field-split" id="inputWorkphone" :value="fighter.WorkNum" v-model="fighter.WorkNum">
+  </li>
 
-            <div class="form-group row">
-              <label for="inputName" class="form-group col-md-6">Name</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" id="inputName" placeholder="Certification Name" v-model="recordCert.Name">
-              </div>
-            </div>
+  <li>
+    <label for="inputMobilePhone" class="label-style">Mobile Phone: </label>
+    <input type="text" class="field-style field-split" id="inputMobilephone" :value="fighter.MobileNum" v-model="fighter.MobileNum">
+  </li>
 
-            <div class="form-group row">
-              <label for="inputCertifyAgency" class="form-group col-md-6">Agency</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" id="inputCertifyAgency" placeholder="Agency" v-model="recordCert.CertifyAgency">
-              </div>
-            </div>
+  <li>
+    <label for="inputRadioNum" class="label-style">Radio Number: </label>
+    <input type="text" class="field-style field-split" id="inputRadioNum" :value="fighter.RadioNum" v-model="fighter.RadioNum">
+  </li>
 
-            <div class="form-group row">
-              <label for="inputExpirationPeriod" class="form-group col-md-6">Valid Time</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" id="inputExpirationPeriod" placeholder="# Years/Months" v-model="recordCert.ExpirationPeriod">
-              </div>
-            </div>
->>>>>>> details
+  <li>
+    <label for="inputStationNum" class="label-style">Station Number: </label>
+    <input type="text" class="field-style field-split" id="inputStationNum" :value="fighter.StationNum" v-model="fighter.StationNum">
+  </li>
 
+  <li>
+    <label for="inputEmail" class="label-style">Email: </label>
+    <input type="email" class="field-style field-split" id="inputEmail" :value="fighter.Email" v-model="fighter.Email">
+  </li>
 
-           
-<li>
-              <input type="submit" class="field-style">
-            </li>
-  </ul>
+  <li>
+    <label for="inputIsActive" class="label-style">Active: </label>
+    <input type="text" class="field-style field-split" id="inputIsActive" :value="fighter.IsActive" v-model="fighter.IsActive">
+  </li>
+
+  <br>
+
+  <li>
+    <input type="submit" class="field-style">
+  </li>
+</ul>
           </div>
-   
+        </div>
       </form>
     </div>
 
+    <strong id="error_show" size='2' style='color:red;font-size:20px; display:none'>You need to fill in all the blank!</strong>
 
   </main>
   <div class="wrapper row3">
@@ -144,6 +164,6 @@
   </footer>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-  <script src="js/recordCertification.app.js"></script>
+  <script src="js/fighterDetail.app.js"></script>
 </body>
 </html>
