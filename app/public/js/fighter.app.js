@@ -38,14 +38,27 @@ var fighterApp = new Vue({
     handleRowClick(fighter) {
       // fighterApp.fighter = fighter;
       fighterApp.detail = fighter;
-      window.location.assign("fighterDetails.html?MemberId="+fighterApp.detail.MemberId);
+      // window.location.assign("fighterDetails.html?MemberId="+fighterApp.detail.MemberId);
       console.log(fighterApp.detail.MemberId)
       // this.handleDelete();
 
     },
     handleReset() {
       this.fighter = {
-          MemberId: ''
+        MemberId: '',
+        FirstName: '',
+        LastName: '',
+        Gender: '',
+        DateOfBirth: '',
+        Street: '',
+        City: '',
+        State: '',
+        ZipCode: '',
+        WorkNum: '',
+        MobileNum: '',
+        StationNum: '',
+        RadioNum: '',
+        Email: ''
       }
     }
   }, // end methods
