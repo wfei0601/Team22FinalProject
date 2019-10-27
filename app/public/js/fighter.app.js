@@ -3,7 +3,6 @@ var fighterApp = new Vue({
   data: {
     fighters: [],
     fighter: {
-      MemberId:''
     }
   },
   methods: {
@@ -18,10 +17,10 @@ var fighterApp = new Vue({
     //   .then( response => window.location.href='All.html')
     // },
     handleDelete() {
-      console.log(this.fighter.MemberId);
+      console.log(this.fighter);
       fetch('../api/Fighter/delete.php', {
-        method: 'GET',
-        body: JSON.stringify(this.fighter.MemberId),
+        method: 'POST',
+        body: JSON.stringify(this.fighter),
         headers: {
           "Content-Type": "application/json; charset=utf-8"
         }
