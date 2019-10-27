@@ -8,17 +8,17 @@ $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
 $stmt = $db->prepare(
-  'DELETE FROM Fighters
-  WHERE MemberId = ?'
+  'DELETE FROM Certifications
+  WHERE CertificationId = ?'
 );
 
 $stmt->execute([
-  $_POST['MemberId']
+  $_POST['CertificationId']
 ]);
 
-$fighters = $stmt->fetchAll();
+$certs = $stmt->fetchAll();
 
 
 // Step 4: Output
 header('HTTP/1.1 303 See Other');
-header('Location: ../Fighter');
+header('Location: ../Certification');
