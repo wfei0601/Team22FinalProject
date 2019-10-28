@@ -27,7 +27,7 @@ var fDetailApp = new Vue({
       //   Email: ''
       // }
 
-      if(this.recordFighter.FirstName == ''
+      if(this.fighter.FirstName == ''
        || this.fighter.LastName == ''
        ||this.fighter.Gender == ''
        ||this.fighter.DateOfBirth == ''
@@ -47,9 +47,9 @@ var fDetailApp = new Vue({
 
        }
 // console.log('Foo');
-      fetch('api/Fighter/post.php', {
+      fetch('api/Fighter/edit.php', {
         method: 'POST',
-        body: JSON.stringify(this.recordFighter),
+        body: JSON.stringify(this.fighter),
         headers: {
           "Content-Type": "application/json; charset=utf-8"
         }

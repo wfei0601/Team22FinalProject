@@ -8,16 +8,17 @@ $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
 $stmt = $db->prepare(
-  'UPDATE `Fighters` SET `FirstName`=?, LastName, Gender,
-    Street, City, State, ZipCode, WorkNum, MobileNum, RadioNum,
-    StationNum, Email, DateOfBirth)
-  VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'
+  'UPDATE Fighters SET
+    FirstName = ?, LastName = ?, Gender = ?,
+    Street = ?, City = ?, State = ?, ZipCode = ?,
+    WorkNum = ?, MobileNum = ?, RadioNum = ?,
+    StationNum = ?, Position = ?, DateOfBirth = ?, Email = ?
+  WHERE MemberId = ?'
 );
 
 $stmt->execute([
   $_POST['FirstName'],
   $_POST['LastName'],
-  $_POST['DateOfBirth'],
   $_POST['Gender'],
   $_POST['Street'],
   $_POST['City'],
@@ -28,11 +29,12 @@ $stmt->execute([
   $_POST['RadioNum'],
   $_POST['StationNum'],
   $_POST['Position'],
-  $_POST['Email']
+  $_POST['DateOfBirth'],
+  $_POST['Email'],
+  $_POST['MemberId']
 ]);
-
 
 
 // Step 4: Output
 header('HTTP/1.1 303 See Other');
-header('Location: ../Fighter/?MemberId='.$MemberId);
+header('Location: ../Fighter/');

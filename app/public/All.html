@@ -96,7 +96,7 @@
         </div>
       </div>
       <div class="container" id="fDetailApp">
-        <form v-on:submit="handleSubmit" class="form-style">
+        <form v-on:submit.prevent="handleSubmit" class="form-style">
           <div class="sizing">
             <center>
               <h4 style="text-decoration-line: underline">Fighter Registration Form</h4>
@@ -140,8 +140,8 @@
               </li>
 
               <li>
-                <label for="inputZip" class="label-style">Zip: </label>
-                <input type="text" class="field-style field-split align-left" id="inputZip" :value="fighter.ZipCode">
+                <label for="inputZipCode" class="label-style">Zip: </label>
+                <input type="text" class="field-style field-split align-left" id="inputZipCode" :value="fighter.ZipCode">
               </li>
 
               <li>
