@@ -40,6 +40,7 @@ var fighterApp = new Vue({
       fighterApp.detail = fighter;
       // window.location.assign("fighterDetails.html?MemberId="+fighterApp.detail.MemberId);
       console.log(fighterApp.detail.MemberId)
+      fDetailApp.fighter=fighter
       // this.handleDelete();
 
     },
