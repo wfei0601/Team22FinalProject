@@ -8,7 +8,7 @@ $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
 $stmt = $db->prepare(
-  'INSERT INTO Fighters ( FirstName, LastName, Gender,
+  'UPDATE `Fighters` SET `FirstName`=?, LastName, Gender,
     Street, City, State, ZipCode, WorkNum, MobileNum, RadioNum,
     StationNum, Email, DateOfBirth)
   VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'
@@ -27,10 +27,11 @@ $stmt->execute([
   $_POST['MobileNum'],
   $_POST['RadioNum'],
   $_POST['StationNum'],
+  $_POST['Position'],
   $_POST['Email']
 ]);
 
-$MemberId = $db->lastInsertId();
+
 
 // Step 4: Output
 header('HTTP/1.1 303 See Other');

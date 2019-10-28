@@ -4,12 +4,12 @@ var fDetailApp = new Vue({
     fighter: {}
   },
   methods: {
-    fetchFighter() {
-      // fetch('api/records/')
-      fetch('api/Fighter/index.php')
-      .then(response => response.json())
-      .then(json => { fighterApp.fighters = json })
-    },
+    // fetchFighter() {
+    //   // fetch('api/records/')
+    //   fetch('api/Fighter/index.php')
+    //   .then(response => response.json())
+    //   .then(json => { fighterApp.fighters = json })
+    // },
     handleSubmit(event) {
       // this.recordFighter = {
       //   FirstName: '',
@@ -28,17 +28,17 @@ var fDetailApp = new Vue({
       // }
 
       if(this.recordFighter.FirstName == ''
-       || this.recordFighter.LastName == ''
-       ||this.recordFighter.Gender == ''
-       ||this.recordFighter.DateOfBirth == ''
-       ||this.recordFighter.Street == ''
-       ||this.recordFighter.City == ''
-       ||this.recordFighter.ZipCode == ''
-       ||this.recordFighter.WorkNum == ''
-       ||this.recordFighter.MobileNum == ''
-       ||this.recordFighter.StationNum == ''
-       ||this.recordFighter.RadioNum == ''
-       ||this.recordFighter.Email == ''
+       || this.fighter.LastName == ''
+       ||this.fighter.Gender == ''
+       ||this.fighter.DateOfBirth == ''
+       ||this.fighter.Street == ''
+       ||this.fighter.City == ''
+       ||this.fighter.ZipCode == ''
+       ||this.fighter.WorkNum == ''
+       ||this.fighter.MobileNum == ''
+       ||this.fighter.StationNum == ''
+       ||this.fighter.RadioNum == ''
+       ||this.fighter.Email == ''
        )
        {
         document.getElementById('error_show').style.display = "block";
@@ -77,6 +77,7 @@ var fDetailApp = new Vue({
         MobileNum: '',
         StationNum: '',
         RadioNum: '',
+        Position: '',
         Email: ''
       }
     }
@@ -121,7 +122,7 @@ var fDetailApp = new Vue({
       // .then( json => {fighterRecordApp.fighters.push( json[0] )})
    // end methods
   created() {
-    this.fetchFighter();
+    // this.fetchFighter();
     // this.handleReset();
   }
 });

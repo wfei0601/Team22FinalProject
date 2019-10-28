@@ -17,7 +17,6 @@ $stmt = $db->prepare(
 $stmt->execute([
   $_POST['FirstName'],
   $_POST['LastName'],
-  $_POST['DateOfBirth'],
   $_POST['Gender'],
   $_POST['Street'],
   $_POST['City'],
@@ -27,7 +26,8 @@ $stmt->execute([
   $_POST['MobileNum'],
   $_POST['RadioNum'],
   $_POST['StationNum'],
-  $_POST['Email']
+  $_POST['Email'],
+  $_POST['DateOfBirth']
 ]);
 
 $MemberId = $db->lastInsertId();
